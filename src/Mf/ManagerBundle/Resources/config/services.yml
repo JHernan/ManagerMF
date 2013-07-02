@@ -1,0 +1,3 @@
+services:
+    mf.manager.vbulletin_encoder:
+        class: Mf\ManagerBundle\Service\VBulletinEncoder
