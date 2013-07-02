@@ -33,4 +33,8 @@ class User extends BaseUser
     {
         return $this->id;
     }
+
+    public function setSalt($salt){
+        $this->salt = $salt;
+    }
 }

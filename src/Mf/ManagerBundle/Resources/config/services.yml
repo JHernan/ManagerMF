@@ -1,3 +1,10 @@
 services:
     mf.manager.vbulletin_encoder:
         class: Mf\ManagerBundle\Service\VBulletinEncoder
+
+    mf.manager.mf_user:
+        class: Mf\ManagerBundle\Service\MfUser
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            userManager: "@fos_user.user_manager"
+            posts: %posts%
