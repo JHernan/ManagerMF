@@ -11,7 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class UpdateUserCommand extends ContainerAwareCommand
 {
     protected function configure()
-    {
+    {   
         $this
             ->setName('mf:update-user')
             ->setDescription('Update User')
