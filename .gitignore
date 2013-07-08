@@ -12,5 +12,8 @@ web/bundles/*
 app/config/parameters.ini
 app/config/parameters.yml
 
+web/js/*
+web/css/*
+
 .idea/
 /src/Mf/ManagerBundle/Entity/*php~

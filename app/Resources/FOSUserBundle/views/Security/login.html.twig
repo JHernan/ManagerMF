@@ -1,0 +1,30 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+
+{% block stylesheets %}
+{{ parent() }}
+{% stylesheets filter='less,cssrewrite,?yui_css' 
+    '@MfUserBundle/Resources/public/css/login.less'           
+%}
+<link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+{% endstylesheets %}
+{% endblock %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+{% if error %}
+    <div>{{ error|trans }}</div>
+{% endif %}
+
+<form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
+	<h2 class="form-signin-heading">Please sign in</h2>    
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+	<input type="text" class="input-block-level" placeholder="{{ 'security.login.username'|trans }}" id="username" name="_username" value="{{ last_username }}" required="required">
+	<input type="password" class="input-block-level" placeholder="{{ 'security.login.password'|trans }}" id="password" name="_password" required="required">
+	<label class="checkbox">
+		<input type="checkbox" id="remember_me" name="_remember_me" value="on"> {{ 'security.login.remember_me'|trans }}
+	</label>
+	<input class="btn btn-large btn-primary" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+</form>
+{% endblock fos_user_content %}
