@@ -2,12 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
         {% block stylesheets %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         {% stylesheets filter='less,cssrewrite,?yui_css' 
-           '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
-           
+           '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'           
         %}
         <link href="{{ asset_url }}" type="text/css" rel="stylesheet"
            media="screen" />
@@ -17,12 +16,7 @@
     <body>        
         {% block body %}{% endblock %}
         {% block javascripts %}
-        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-        {% javascripts filter='?yui_js' 
-           '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-dropdown.js'           
-        %}
-        <script src="{{ asset_url }}"></script>        
-        {% endjavascripts %}
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>        
         {% endblock %}
     </body>
 </html>
