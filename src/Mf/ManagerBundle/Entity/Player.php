@@ -28,6 +28,12 @@ class Player
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="FootballTeam", inversedBy="players")
+     * @ORM\JoinColumn(name="football_team_id", referencedColumnName="id", nullable=false)
+     */
+    private $football_team;
+
 
     /**
      * Get id
@@ -60,5 +66,28 @@ class Player
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set football_team
+     *
+     * @param \Mf\ManagerBundle\Entity\FootballTeam $footballTeam
+     * @return Player
+     */
+    public function setFootballTeam(\Mf\ManagerBundle\Entity\FootballTeam $footballTeam)
+    {
+        $this->football_team = $footballTeam;
+    
+        return $this;
+    }
+
+    /**
+     * Get football_team
+     *
+     * @return \Mf\ManagerBundle\Entity\FootballTeam 
+     */
+    public function getFootballTeam()
+    {
+        return $this->football_team;
     }
 }

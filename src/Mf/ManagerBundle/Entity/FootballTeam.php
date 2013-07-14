@@ -34,6 +34,11 @@ class FootballTeam
      */
     private $league;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Player", mappedBy="football_team")
+     */
+    private $players;
+
 
     /**
      * Get id
@@ -89,5 +94,45 @@ class FootballTeam
     public function getLeague()
     {
         return $this->league;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->players = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add players
+     *
+     * @param \Mf\ManagerBundle\Entity\Player $players
+     * @return FootballTeam
+     */
+    public function addPlayer(\Mf\ManagerBundle\Entity\Player $players)
+    {
+        $this->players[] = $players;
+    
+        return $this;
+    }
+
+    /**
+     * Remove players
+     *
+     * @param \Mf\ManagerBundle\Entity\Player $players
+     */
+    public function removePlayer(\Mf\ManagerBundle\Entity\Player $players)
+    {
+        $this->players->removeElement($players);
+    }
+
+    /**
+     * Get players
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPlayers()
+    {
+        return $this->players;
     }
 }
