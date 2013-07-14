@@ -32,7 +32,7 @@ class Team
      * @ORM\ManyToOne(targetEntity="Mf\UserBundle\Entity\User", inversedBy="teams")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      */
-    private $user_id;
+    private $user;
 
     /**
      * @ORM\ManyToOne(targetEntity="League", inversedBy="teams")
