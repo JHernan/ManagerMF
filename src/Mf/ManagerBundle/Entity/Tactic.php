@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Tactic
  *
- * @ORM\Table()
+ * @ORM\Table(name="mf_tactic")
  * @ORM\Entity
  */
 class Tactic

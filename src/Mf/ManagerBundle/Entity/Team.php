@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Team
  *
- * @ORM\Table()
+ * @ORM\Table(name="mf_team")
  * @ORM\Entity(repositoryClass="Mf\ManagerBundle\Entity\TeamRepository")
  */
 class Team

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Demarcation
  *
- * @ORM\Table()
+ * @ORM\Table(name="mf_demarcation")
  * @ORM\Entity
  */
 class Demarcation

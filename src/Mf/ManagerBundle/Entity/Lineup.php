@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Lineup
  *
- * @ORM\Table()
+ * @ORM\Table(name="mf_lineup")
  * @ORM\Entity(repositoryClass="Mf\ManagerBundle\Entity\LineupRepository")
  */
 class Lineup

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * MatchDay
  *
- * @ORM\Table()
+ * @ORM\Table(name="mf_match_day")
  * @ORM\Entity(repositoryClass="Mf\ManagerBundle\Entity\MatchDayRepository")
  */
 class MatchDay
