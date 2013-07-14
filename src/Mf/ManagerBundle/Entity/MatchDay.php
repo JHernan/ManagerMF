@@ -41,6 +41,11 @@ class MatchDay
      */
     private $calendar;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Lineup", mappedBy="match_day")
+     */
+    private $lineups;
+
 
     /**
      * Get id
@@ -119,5 +124,45 @@ class MatchDay
     public function getCalendar()
     {
         return $this->calendar;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->lineups = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add lineups
+     *
+     * @param \Mf\ManagerBundle\Entity\Lineup $lineups
+     * @return MatchDay
+     */
+    public function addLineup(\Mf\ManagerBundle\Entity\Lineup $lineups)
+    {
+        $this->lineups[] = $lineups;
+    
+        return $this;
+    }
+
+    /**
+     * Remove lineups
+     *
+     * @param \Mf\ManagerBundle\Entity\Lineup $lineups
+     */
+    public function removeLineup(\Mf\ManagerBundle\Entity\Lineup $lineups)
+    {
+        $this->lineups->removeElement($lineups);
+    }
+
+    /**
+     * Get lineups
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLineups()
+    {
+        return $this->lineups;
     }
 }

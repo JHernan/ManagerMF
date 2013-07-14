@@ -22,7 +22,7 @@ class Lineup
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="MatchDay")
+     * @ORM\ManyToOne(targetEntity="MatchDay", inversedBy="lineups")
      * @ORM\JoinColumn(name="match_day_id", referencedColumnName="id", nullable=false)
      */
     private $match_day;
