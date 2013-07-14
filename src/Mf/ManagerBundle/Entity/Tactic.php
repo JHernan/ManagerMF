@@ -28,6 +28,12 @@ class Tactic
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Lineup")
+     * @ORM\JoinColumn(name="lineup_id", referencedColumnName="id", nullable=false)
+     */
+    private $lineup;
+
 
     /**
      * Get id
@@ -60,5 +66,28 @@ class Tactic
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set lineup
+     *
+     * @param \Mf\ManagerBundle\Entity\Lineup $lineup
+     * @return Tactic
+     */
+    public function setLineup(\Mf\ManagerBundle\Entity\Lineup $lineup)
+    {
+        $this->lineup = $lineup;
+    
+        return $this;
+    }
+
+    /**
+     * Get lineup
+     *
+     * @return \Mf\ManagerBundle\Entity\Lineup 
+     */
+    public function getLineup()
+    {
+        return $this->lineup;
     }
 }
