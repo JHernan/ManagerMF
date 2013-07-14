@@ -41,7 +41,7 @@ class Team
     private $league;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Tactic")
+     * @ORM\ManyToOne(targetEntity="Tactic", inversedBy="teams")
      * @ORM\JoinColumn(name="tactic_id", referencedColumnName="id", nullable=false)
      */
     private $tactic;
