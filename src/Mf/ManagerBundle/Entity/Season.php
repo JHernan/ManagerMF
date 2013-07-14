@@ -29,7 +29,7 @@ class Season
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="League")
+     * @ORM\ManyToOne(targetEntity="League", inversedBy="seasons")
      * @ORM\JoinColumn(name="league_id", referencedColumnName="id", nullable=false)
      */
     private $league;

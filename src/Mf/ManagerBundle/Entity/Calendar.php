@@ -29,12 +29,6 @@ class Calendar
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="League")
-     * @ORM\JoinColumn(name="league_id", referencedColumnName="id", nullable=false)
-     */
-    private $league;
-
-    /**
      * @ORM\OneToOne(targetEntity="Season", inversedBy="calendar")
      * @ORM\JoinColumn(name="season_id", referencedColumnName="id", nullable=false)
      */
@@ -77,29 +71,6 @@ class Calendar
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set league
-     *
-     * @param \Mf\ManagerBundle\Entity\League $league
-     * @return Calendar
-     */
-    public function setLeague(\Mf\ManagerBundle\Entity\League $league = null)
-    {
-        $this->league = $league;
-    
-        return $this;
-    }
-
-    /**
-     * Get league
-     *
-     * @return \Mf\ManagerBundle\Entity\League 
-     */
-    public function getLeague()
-    {
-        return $this->league;
     }
 
     /**
