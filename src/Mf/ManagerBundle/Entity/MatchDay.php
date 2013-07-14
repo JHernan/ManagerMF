@@ -35,6 +35,12 @@ class MatchDay
      */
     private $date;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Calendar")
+     * @ORM\JoinColumn(name="calendar_id", referencedColumnName="id", nullable=false)
+     */
+    private $calendar;
+
 
     /**
      * Get id
