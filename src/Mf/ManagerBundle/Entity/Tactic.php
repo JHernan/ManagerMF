@@ -33,6 +33,12 @@ class Tactic
      */
     private $lineups;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Team", inversedBy="tactics")
+     * @ORM\JoinTable(name="teams_tactics")
+     */
+    private $teams;
+
 
     /**
      * Get id
@@ -107,5 +113,38 @@ class Tactic
     public function getLineups()
     {
         return $this->lineups;
+    }
+
+    /**
+     * Add teams
+     *
+     * @param \Mf\ManagerBundle\Entity\Team $teams
+     * @return Tactic
+     */
+    public function addTeam(\Mf\ManagerBundle\Entity\Team $teams)
+    {
+        $this->teams[] = $teams;
+    
+        return $this;
+    }
+
+    /**
+     * Remove teams
+     *
+     * @param \Mf\ManagerBundle\Entity\Team $teams
+     */
+    public function removeTeam(\Mf\ManagerBundle\Entity\Team $teams)
+    {
+        $this->teams->removeElement($teams);
+    }
+
+    /**
+     * Get teams
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTeams()
+    {
+        return $this->teams;
     }
 }

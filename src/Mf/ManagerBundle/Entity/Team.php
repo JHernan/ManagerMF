@@ -40,6 +40,11 @@ class Team
      */
     private $league;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Tactic", mappedBy="teams")
+     */
+    private $tactics;
+
 
     /**
      * Get id
@@ -118,5 +123,45 @@ class Team
     public function getUser()
     {
         return $this->user;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->tactics = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add tactics
+     *
+     * @param \Mf\ManagerBundle\Entity\Tactic $tactics
+     * @return Team
+     */
+    public function addTactic(\Mf\ManagerBundle\Entity\Tactic $tactics)
+    {
+        $this->tactics[] = $tactics;
+    
+        return $this;
+    }
+
+    /**
+     * Remove tactics
+     *
+     * @param \Mf\ManagerBundle\Entity\Tactic $tactics
+     */
+    public function removeTactic(\Mf\ManagerBundle\Entity\Tactic $tactics)
+    {
+        $this->tactics->removeElement($tactics);
+    }
+
+    /**
+     * Get tactics
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTactics()
+    {
+        return $this->tactics;
     }
 }
