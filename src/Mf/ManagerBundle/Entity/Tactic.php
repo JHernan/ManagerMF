@@ -29,11 +29,6 @@ class Tactic
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="Team", mappedBy="tactic")
-     */
-    private $teams;
-
-    /**
      * @ORM\OneToMany(targetEntity="Lineup", mappedBy="tactic")
      */
     private $lineups;
@@ -72,67 +67,13 @@ class Tactic
         return $this->name;
     }
 
-    /**
-     * Set lineup
-     *
-     * @param \Mf\ManagerBundle\Entity\Lineup $lineup
-     * @return Tactic
-     */
-    public function setLineup(\Mf\ManagerBundle\Entity\Lineup $lineup)
-    {
-        $this->lineup = $lineup;
     
-        return $this;
-    }
-
-    /**
-     * Get lineup
-     *
-     * @return \Mf\ManagerBundle\Entity\Lineup 
-     */
-    public function getLineup()
-    {
-        return $this->lineup;
-    }
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->teams = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
-    /**
-     * Add teams
-     *
-     * @param \Mf\ManagerBundle\Entity\Team $teams
-     * @return Tactic
-     */
-    public function addTeam(\Mf\ManagerBundle\Entity\Team $teams)
-    {
-        $this->teams[] = $teams;
-    
-        return $this;
-    }
-
-    /**
-     * Remove teams
-     *
-     * @param \Mf\ManagerBundle\Entity\Team $teams
-     */
-    public function removeTeam(\Mf\ManagerBundle\Entity\Team $teams)
-    {
-        $this->teams->removeElement($teams);
-    }
-
-    /**
-     * Get teams
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getTeams()
-    {
-        return $this->teams;
     }
 
     /**

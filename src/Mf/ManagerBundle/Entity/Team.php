@@ -40,12 +40,6 @@ class Team
      */
     private $league;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Tactic", inversedBy="teams")
-     * @ORM\JoinColumn(name="tactic_id", referencedColumnName="id", nullable=false)
-     */
-    private $tactic;
-
 
     /**
      * Get id
@@ -81,29 +75,6 @@ class Team
     }
 
     /**
-     * Set user_id
-     *
-     * @param \Mf\ManagerBundle\Entity\User $userId
-     * @return Team
-     */
-    public function setUserId(\Mf\ManagerBundle\Entity\User $userId)
-    {
-        $this->user_id = $userId;
-    
-        return $this;
-    }
-
-    /**
-     * Get user_id
-     *
-     * @return \Mf\ManagerBundle\Entity\User 
-     */
-    public function getUserId()
-    {
-        return $this->user_id;
-    }
-
-    /**
      * Set league
      *
      * @param \Mf\ManagerBundle\Entity\League $league
@@ -124,29 +95,6 @@ class Team
     public function getLeague()
     {
         return $this->league;
-    }
-
-    /**
-     * Set tactic
-     *
-     * @param \Mf\ManagerBundle\Entity\Tactic $tactic
-     * @return Team
-     */
-    public function setTactic(\Mf\ManagerBundle\Entity\Tactic $tactic)
-    {
-        $this->tactic = $tactic;
-    
-        return $this;
-    }
-
-    /**
-     * Get tactic
-     *
-     * @return \Mf\ManagerBundle\Entity\Tactic 
-     */
-    public function getTactic()
-    {
-        return $this->tactic;
     }
 
     /**
