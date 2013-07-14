@@ -33,6 +33,11 @@ class League
      */
     private $seasons;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Team", mappedBy="league")
+     */
+    private $teams;
+
 
     /**
      * Get id
@@ -105,5 +110,38 @@ class League
     public function getSeasons()
     {
         return $this->seasons;
+    }
+
+    /**
+     * Add teams
+     *
+     * @param \Mf\ManagerBundle\Entity\Team $teams
+     * @return League
+     */
+    public function addTeam(\Mf\ManagerBundle\Entity\Team $teams)
+    {
+        $this->teams[] = $teams;
+    
+        return $this;
+    }
+
+    /**
+     * Remove teams
+     *
+     * @param \Mf\ManagerBundle\Entity\Team $teams
+     */
+    public function removeTeam(\Mf\ManagerBundle\Entity\Team $teams)
+    {
+        $this->teams->removeElement($teams);
+    }
+
+    /**
+     * Get teams
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTeams()
+    {
+        return $this->teams;
     }
 }

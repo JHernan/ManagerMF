@@ -35,7 +35,7 @@ class Team
     private $user_id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="League")
+     * @ORM\ManyToOne(targetEntity="League", inversedBy="teams")
      * @ORM\JoinColumn(name="league_id", referencedColumnName="id", nullable=false)
      */
     private $league;
