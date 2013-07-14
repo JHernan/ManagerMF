@@ -35,7 +35,7 @@ class Calendar
     private $league;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Season")
+     * @ORM\OneToOne(targetEntity="Season", inversedBy="calendar")
      * @ORM\JoinColumn(name="season_id", referencedColumnName="id", nullable=false)
      */
     private $season;
