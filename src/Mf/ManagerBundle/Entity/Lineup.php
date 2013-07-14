@@ -21,6 +21,12 @@ class Lineup
      */
     private $id;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="MatchDay")
+     * @ORM\JoinColumn(name="match_day_id", referencedColumnName="id", nullable=false)
+     */
+    private $match_day;
+
 
     /**
      * Get id
@@ -30,5 +36,28 @@ class Lineup
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set match_day
+     *
+     * @param \Mf\ManagerBundle\Entity\MatchDay $matchDay
+     * @return Lineup
+     */
+    public function setMatchDay(\Mf\ManagerBundle\Entity\MatchDay $matchDay)
+    {
+        $this->match_day = $matchDay;
+    
+        return $this;
+    }
+
+    /**
+     * Get match_day
+     *
+     * @return \Mf\ManagerBundle\Entity\MatchDay 
+     */
+    public function getMatchDay()
+    {
+        return $this->match_day;
     }
 }

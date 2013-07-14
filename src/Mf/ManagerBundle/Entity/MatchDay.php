@@ -97,4 +97,27 @@ class MatchDay
     {
         return $this->date;
     }
+
+    /**
+     * Set calendar
+     *
+     * @param \Mf\ManagerBundle\Entity\Calendar $calendar
+     * @return MatchDay
+     */
+    public function setCalendar(\Mf\ManagerBundle\Entity\Calendar $calendar)
+    {
+        $this->calendar = $calendar;
+    
+        return $this;
+    }
+
+    /**
+     * Get calendar
+     *
+     * @return \Mf\ManagerBundle\Entity\Calendar 
+     */
+    public function getCalendar()
+    {
+        return $this->calendar;
+    }
 }
