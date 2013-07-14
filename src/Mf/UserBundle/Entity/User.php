@@ -18,6 +18,11 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Mf\ManagerBundle\Entity\Team", mappedBy="user")
+     */
+    private $teams;
+
     public function __construct()
     {
         parent::__construct();
@@ -36,5 +41,38 @@ class User extends BaseUser
 
     public function setSalt($salt){
         $this->salt = $salt;
+    }
+
+    /**
+     * Add teams
+     *
+     * @param \Mf\UserBundle\Entity\Team $teams
+     * @return User
+     */
+    public function addTeam(\Mf\UserBundle\Entity\Team $teams)
+    {
+        $this->teams[] = $teams;
+    
+        return $this;
+    }
+
+    /**
+     * Remove teams
+     *
+     * @param \Mf\UserBundle\Entity\Team $teams
+     */
+    public function removeTeam(\Mf\UserBundle\Entity\Team $teams)
+    {
+        $this->teams->removeElement($teams);
+    }
+
+    /**
+     * Get teams
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTeams()
+    {
+        return $this->teams;
     }
 }
