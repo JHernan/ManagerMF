@@ -34,6 +34,12 @@ class Demarcation
      */
     private $tactics;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Player", inversedBy="demarcations")
+     * @ORM\JoinTable(name="players_demarcations")
+     */
+    private $players;
+
 
     /**
      * Get id
@@ -106,5 +112,38 @@ class Demarcation
     public function getTactics()
     {
         return $this->tactics;
+    }
+
+    /**
+     * Add players
+     *
+     * @param \Mf\ManagerBundle\Entity\Player $players
+     * @return Demarcation
+     */
+    public function addPlayer(\Mf\ManagerBundle\Entity\Player $players)
+    {
+        $this->players[] = $players;
+    
+        return $this;
+    }
+
+    /**
+     * Remove players
+     *
+     * @param \Mf\ManagerBundle\Entity\Player $players
+     */
+    public function removePlayer(\Mf\ManagerBundle\Entity\Player $players)
+    {
+        $this->players->removeElement($players);
+    }
+
+    /**
+     * Get players
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPlayers()
+    {
+        return $this->players;
     }
 }

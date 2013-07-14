@@ -34,6 +34,11 @@ class Player
      */
     private $football_team;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Demarcation", mappedBy="players")
+     */
+    private $demarcations;
+
 
     /**
      * Get id
@@ -89,5 +94,45 @@ class Player
     public function getFootballTeam()
     {
         return $this->football_team;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->demarcations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add demarcations
+     *
+     * @param \Mf\ManagerBundle\Entity\Demarcation $demarcations
+     * @return Player
+     */
+    public function addDemarcation(\Mf\ManagerBundle\Entity\Demarcation $demarcations)
+    {
+        $this->demarcations[] = $demarcations;
+    
+        return $this;
+    }
+
+    /**
+     * Remove demarcations
+     *
+     * @param \Mf\ManagerBundle\Entity\Demarcation $demarcations
+     */
+    public function removeDemarcation(\Mf\ManagerBundle\Entity\Demarcation $demarcations)
+    {
+        $this->demarcations->removeElement($demarcations);
+    }
+
+    /**
+     * Get demarcations
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDemarcations()
+    {
+        return $this->demarcations;
     }
 }
