@@ -36,7 +36,7 @@ class MatchDay
     private $date;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Calendar")
+     * @ORM\ManyToOne(targetEntity="Calendar", inversedBy="match_days")
      * @ORM\JoinColumn(name="calendar_id", referencedColumnName="id", nullable=false)
      */
     private $calendar;

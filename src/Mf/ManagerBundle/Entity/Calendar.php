@@ -40,6 +40,11 @@ class Calendar
      */
     private $season;
 
+    /**
+     * @ORM\OneToMany(targetEntity="MatchDay", mappedBy="calendar")
+     */
+    private $match_days;
+
 
     /**
      * Get id
@@ -118,5 +123,45 @@ class Calendar
     public function getSeason()
     {
         return $this->season;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->match_days = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add match_days
+     *
+     * @param \Mf\ManagerBundle\Entity\MatchDay $matchDays
+     * @return Calendar
+     */
+    public function addMatchDay(\Mf\ManagerBundle\Entity\MatchDay $matchDays)
+    {
+        $this->match_days[] = $matchDays;
+    
+        return $this;
+    }
+
+    /**
+     * Remove match_days
+     *
+     * @param \Mf\ManagerBundle\Entity\MatchDay $matchDays
+     */
+    public function removeMatchDay(\Mf\ManagerBundle\Entity\MatchDay $matchDays)
+    {
+        $this->match_days->removeElement($matchDays);
+    }
+
+    /**
+     * Get match_days
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMatchDays()
+    {
+        return $this->match_days;
     }
 }
