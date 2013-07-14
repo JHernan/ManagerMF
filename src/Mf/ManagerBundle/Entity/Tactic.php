@@ -29,15 +29,14 @@ class Tactic
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Lineup")
-     * @ORM\JoinColumn(name="lineup_id", referencedColumnName="id", nullable=false)
-     */
-    private $lineup;
-
-    /**
      * @ORM\OneToMany(targetEntity="Team", mappedBy="tactic")
      */
     private $teams;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Lineup", mappedBy="tactic")
+     */
+    private $lineups;
 
 
     /**
@@ -134,5 +133,38 @@ class Tactic
     public function getTeams()
     {
         return $this->teams;
+    }
+
+    /**
+     * Add lineups
+     *
+     * @param \Mf\ManagerBundle\Entity\Lineup $lineups
+     * @return Tactic
+     */
+    public function addLineup(\Mf\ManagerBundle\Entity\Lineup $lineups)
+    {
+        $this->lineups[] = $lineups;
+    
+        return $this;
+    }
+
+    /**
+     * Remove lineups
+     *
+     * @param \Mf\ManagerBundle\Entity\Lineup $lineups
+     */
+    public function removeLineup(\Mf\ManagerBundle\Entity\Lineup $lineups)
+    {
+        $this->lineups->removeElement($lineups);
+    }
+
+    /**
+     * Get lineups
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLineups()
+    {
+        return $this->lineups;
     }
 }

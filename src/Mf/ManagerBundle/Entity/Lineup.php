@@ -27,6 +27,12 @@ class Lineup
      */
     private $match_day;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Tactic", inversedBy="lineups")
+     * @ORM\JoinColumn(name="tactic_id", referencedColumnName="id", nullable=false)
+     */
+    private $tactic;
+
 
     /**
      * Get id
@@ -59,5 +65,35 @@ class Lineup
     public function getMatchDay()
     {
         return $this->match_day;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->tactics = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set tactic
+     *
+     * @param \Mf\ManagerBundle\Entity\Tactic $tactic
+     * @return Lineup
+     */
+    public function setTactic(\Mf\ManagerBundle\Entity\Tactic $tactic)
+    {
+        $this->tactic = $tactic;
+    
+        return $this;
+    }
+
+    /**
+     * Get tactic
+     *
+     * @return \Mf\ManagerBundle\Entity\Tactic 
+     */
+    public function getTactic()
+    {
+        return $this->tactic;
     }
 }

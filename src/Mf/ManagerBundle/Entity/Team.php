@@ -148,4 +148,27 @@ class Team
     {
         return $this->tactic;
     }
+
+    /**
+     * Set user
+     *
+     * @param \Mf\UserBundle\Entity\User $user
+     * @return Team
+     */
+    public function setUser(\Mf\UserBundle\Entity\User $user)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Mf\UserBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }
