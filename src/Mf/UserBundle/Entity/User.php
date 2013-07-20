@@ -46,10 +46,10 @@ class User extends BaseUser
     /**
      * Add teams
      *
-     * @param \Mf\UserBundle\Entity\Team $teams
+     * @param \Mf\ManagerBundle\Entity\Team $teams
      * @return User
      */
-    public function addTeam(\Mf\UserBundle\Entity\Team $teams)
+    public function addTeam(\Mf\ManagerBundle\Entity\Team $teams)
     {
         $this->teams[] = $teams;
     
@@ -61,7 +61,7 @@ class User extends BaseUser
      *
      * @param \Mf\UserBundle\Entity\Team $teams
      */
-    public function removeTeam(\Mf\UserBundle\Entity\Team $teams)
+    public function removeTeam(\Mf\ManagerBundle\Entity\Team $teams)
     {
         $this->teams->removeElement($teams);
     }
