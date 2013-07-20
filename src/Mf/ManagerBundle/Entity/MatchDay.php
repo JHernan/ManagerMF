@@ -31,9 +31,16 @@ class MatchDay
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date", type="datetime")
+     * @ORM\Column(name="start_date", type="datetime")
      */
-    private $date;
+    private $start_date;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="end_date", type="datetime")
+     */
+    private $end_date;
 
     /**
      * @ORM\OneToMany(targetEntity="Lineup", mappedBy="match_day")
@@ -91,26 +98,49 @@ class MatchDay
     }
 
     /**
-     * Set date
+     * Set start_date
      *
-     * @param \DateTime $date
+     * @param \DateTime $startDate
      * @return MatchDay
      */
-    public function setDate($date)
+    public function setStartDate($startDate)
     {
-        $this->date = $date;
+        $this->start_date = $startDate;
     
         return $this;
     }
 
     /**
-     * Get date
+     * Get start_date
      *
      * @return \DateTime 
      */
-    public function getDate()
+    public function getStartDate()
     {
-        return $this->date;
+        return $this->start_date;
+    }
+
+    /**
+     * Set end_date
+     *
+     * @param \DateTime $endDate
+     * @return MatchDay
+     */
+    public function setEndDate($endDate)
+    {
+        $this->end_date = $endDate;
+    
+        return $this;
+    }
+
+    /**
+     * Get end_date
+     *
+     * @return \DateTime 
+     */
+    public function getEndDate()
+    {
+        return $this->end_date;
     }
 
 

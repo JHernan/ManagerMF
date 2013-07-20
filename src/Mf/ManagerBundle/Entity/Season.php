@@ -96,28 +96,7 @@ class Season
         return $this->league;
     }
 
-    /**
-     * Set calendar
-     *
-     * @param \Mf\ManagerBundle\Entity\Calendar $calendar
-     * @return Season
-     */
-    public function setCalendar(\Mf\ManagerBundle\Entity\Calendar $calendar = null)
-    {
-        $this->calendar = $calendar;
     
-        return $this;
-    }
-
-    /**
-     * Get calendar
-     *
-     * @return \Mf\ManagerBundle\Entity\Calendar 
-     */
-    public function getCalendar()
-    {
-        return $this->calendar;
-    }
     /**
      * Constructor
      */
