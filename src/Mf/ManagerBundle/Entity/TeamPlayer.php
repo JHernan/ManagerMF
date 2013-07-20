@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * TeamPlayer
  *
- * @ORM\Table()
+ * @ORM\Table(name="mf_team_player")
  * @ORM\Entity
  */
 class TeamPlayer

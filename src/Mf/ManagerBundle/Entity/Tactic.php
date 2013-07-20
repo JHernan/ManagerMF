@@ -35,7 +35,7 @@ class Tactic
 
     /**
      * @ORM\ManyToMany(targetEntity="Team", inversedBy="tactics")
-     * @ORM\JoinTable(name="teams_tactics")
+     * @ORM\JoinTable(name="mf_teams_tactics")
      */
     private $teams;
 

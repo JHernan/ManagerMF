@@ -35,7 +35,7 @@ class Lineup
 
     /**
      * @ORM\ManyToMany(targetEntity="TeamPlayer", inversedBy="lineups")
-     * @ORM\JoinTable(name="lineups_teamplayers")
+     * @ORM\JoinTable(name="mf_lineups_teamplayers")
      */
     private $team_players;
 

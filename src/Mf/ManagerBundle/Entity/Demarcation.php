@@ -30,13 +30,13 @@ class Demarcation
 
     /**
      * @ORM\ManyToMany(targetEntity="Tactic", inversedBy="demarcations")
-     * @ORM\JoinTable(name="tactics_demarcations")
+     * @ORM\JoinTable(name="mf_tactics_demarcations")
      */
     private $tactics;
 
     /**
      * @ORM\ManyToMany(targetEntity="Player", inversedBy="demarcations")
-     * @ORM\JoinTable(name="players_demarcations")
+     * @ORM\JoinTable(name="mf_players_demarcations")
      */
     private $players;
 
