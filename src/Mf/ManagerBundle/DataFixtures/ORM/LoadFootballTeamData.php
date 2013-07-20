@@ -42,6 +42,8 @@ class LoadFootballTeamData extends AbstractFixture implements OrderedFixtureInte
             $football_team->setLeague($this->getReference('La Liga'));
 
             $manager->persist($football_team);
+
+            $this->addReference($item, $football_team);
         endforeach;
         
         $manager->flush();
