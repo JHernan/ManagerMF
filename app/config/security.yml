@@ -1,6 +1,6 @@
 security:
     encoders:
-        Mf\ManagerBundle\Entity\User:
+        Mf\UserBundle\Entity\User:
              id: mf.manager.vbulletin_encoder
 
     role_hierarchy:

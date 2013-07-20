@@ -86,3 +86,12 @@ mopa_bootstrap:
         show_child_legend: false # default is true
         error_type: block # or inline which is default
         checkbox_label: 'widget' # default is both (label|widget|both)
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+
+        sonata.block.service.text:
+        sonata.block.service.rss:

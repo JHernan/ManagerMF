@@ -23,7 +23,11 @@
         "incenteev/composer-parameter-handler": "~2.0",
 	    "friendsofsymfony/user-bundle": "~2.0@dev",
 	    "mopa/bootstrap-bundle": "dev-master",
-	    "twitter/bootstrap": "dev-master"
+	    "twitter/bootstrap": "dev-master",
+        "sonata-project/admin-bundle": "2.2.*@dev",
+        "sonata-project/doctrine-orm-admin-bundle": "2.2.*@dev",
+        "sonata-project/intl-bundle": "2.2.*@dev",
+        "sonata-project/cache-bundle": "2.1.*@dev"
     },
     "scripts": {
         "post-install-cmd": [
@@ -32,7 +36,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-	    "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrap"
+	       "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrap"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
