@@ -39,6 +39,11 @@ class Player
      */
     private $demarcations;
 
+    /**
+     * @ORM\OneToMany(targetEntity="TeamPlayer", mappedBy="player")
+     */
+    private $team_players;
+
 
     /**
      * Get id
@@ -134,5 +139,38 @@ class Player
     public function getDemarcations()
     {
         return $this->demarcations;
+    }
+
+    /**
+     * Add team_players
+     *
+     * @param \Mf\ManagerBundle\Entity\TeamPlayer $teamPlayers
+     * @return Player
+     */
+    public function addTeamPlayer(\Mf\ManagerBundle\Entity\TeamPlayer $teamPlayers)
+    {
+        $this->team_players[] = $teamPlayers;
+    
+        return $this;
+    }
+
+    /**
+     * Remove team_players
+     *
+     * @param \Mf\ManagerBundle\Entity\TeamPlayer $teamPlayers
+     */
+    public function removeTeamPlayer(\Mf\ManagerBundle\Entity\TeamPlayer $teamPlayers)
+    {
+        $this->team_players->removeElement($teamPlayers);
+    }
+
+    /**
+     * Get team_players
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTeamPlayers()
+    {
+        return $this->team_players;
     }
 }

@@ -45,6 +45,11 @@ class Team
      */
     private $tactics;
 
+    /**
+     * @ORM\OneToMany(targetEntity="TeamPlayer", mappedBy="team")
+     */
+    private $team_players;
+
 
     /**
      * Get id
@@ -163,5 +168,38 @@ class Team
     public function getTactics()
     {
         return $this->tactics;
+    }
+
+    /**
+     * Add team_players
+     *
+     * @param \Mf\ManagerBundle\Entity\TeamPlayer $teamPlayers
+     * @return Team
+     */
+    public function addTeamPlayer(\Mf\ManagerBundle\Entity\TeamPlayer $teamPlayers)
+    {
+        $this->team_players[] = $teamPlayers;
+    
+        return $this;
+    }
+
+    /**
+     * Remove team_players
+     *
+     * @param \Mf\ManagerBundle\Entity\TeamPlayer $teamPlayers
+     */
+    public function removeTeamPlayer(\Mf\ManagerBundle\Entity\TeamPlayer $teamPlayers)
+    {
+        $this->team_players->removeElement($teamPlayers);
+    }
+
+    /**
+     * Get team_players
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTeamPlayers()
+    {
+        return $this->team_players;
     }
 }
