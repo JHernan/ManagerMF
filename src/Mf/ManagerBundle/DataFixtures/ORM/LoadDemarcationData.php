@@ -7,7 +7,7 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Mf\ManagerBundle\Entity\Demarcation;
 
-class LoadDemarcationata extends AbstractFixture implements OrderedFixtureInterface
+class LoadDemarcationData extends AbstractFixture implements OrderedFixtureInterface
 {
     /**
      * {@inheritDoc}
