@@ -37,7 +37,7 @@ class LoadLeagueData extends AbstractFixture implements OrderedFixtureInterface
      */
     public function getOrder()
     {
-        return 20; // the order in which fixtures will be loaded
+        return 13; // the order in which fixtures will be loaded
     }
 }
 

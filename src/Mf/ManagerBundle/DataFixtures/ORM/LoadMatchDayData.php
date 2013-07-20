@@ -64,7 +64,7 @@ class LoadMatchDayData extends AbstractFixture implements OrderedFixtureInterfac
      */
     public function getOrder()
     {
-        return 41; // the order in which fixtures will be loaded
+        return 30; // the order in which fixtures will be loaded
     }
 }
 

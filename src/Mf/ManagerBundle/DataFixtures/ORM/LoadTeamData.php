@@ -53,7 +53,7 @@ class LoadTeamData extends AbstractFixture implements OrderedFixtureInterface
      */
     public function getOrder()
     {
-        return 40; // the order in which fixtures will be loaded
+        return 21; // the order in which fixtures will be loaded
     }
 }
 

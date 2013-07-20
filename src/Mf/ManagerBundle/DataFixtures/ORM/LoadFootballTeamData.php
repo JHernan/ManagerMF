@@ -54,7 +54,7 @@ class LoadFootballTeamData extends AbstractFixture implements OrderedFixtureInte
      */
     public function getOrder()
     {
-        return 30; // the order in which fixtures will be loaded
+        return 20; // the order in which fixtures will be loaded
     }
 }
 

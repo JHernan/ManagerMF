@@ -216,7 +216,7 @@ class LoadPlayerData extends AbstractFixture implements OrderedFixtureInterface
      */
     public function getOrder()
     {
-        return 42; // the order in which fixtures will be loaded
+        return 31; // the order in which fixtures will be loaded
     }
 }
 
