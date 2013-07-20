@@ -24,5 +24,7 @@ set :shared_children,   [app_path + "/logs", web_path + "/uploads", "vendor"]
 
 set :use_composer, true
 
+set :dump_assetic_assets, true
+
 # Be more verbose by uncommenting the following line
 logger.level = Logger::MAX_LEVEL
