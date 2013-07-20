@@ -2,11 +2,12 @@
 
 namespace Mf\ManagerBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Mf\ManagerBundle\Entity\FootballTeam;
 
-class LoadFootballTeamData implements FixtureInterface
+class LoadFootballTeamData extends AbstractFixture implements OrderedFixtureInterface
 {
     /**
      * {@inheritDoc}
@@ -38,11 +39,20 @@ class LoadFootballTeamData implements FixtureInterface
         foreach($football_teams as $item):
             $football_team = new FootballTeam();
             $football_team->setName($item);
+            $football_team->setLeague($this->getReference('La Liga'));
 
             $manager->persist($football_team);
         endforeach;
         
         $manager->flush();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getOrder()
+    {
+        return 30; // the order in which fixtures will be loaded
     }
 }
 

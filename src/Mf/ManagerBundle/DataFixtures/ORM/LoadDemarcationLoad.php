@@ -2,11 +2,12 @@
 
 namespace Mf\ManagerBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Mf\ManagerBundle\Entity\Demarcation;
 
-class LoadDemarcationata implements FixtureInterface
+class LoadDemarcationata extends AbstractFixture implements OrderedFixtureInterface
 {
     /**
      * {@inheritDoc}
@@ -33,6 +34,14 @@ class LoadDemarcationata implements FixtureInterface
         endforeach;
         
         $manager->flush();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getOrder()
+    {
+        return 10; // the order in which fixtures will be loaded
     }
 }
 
