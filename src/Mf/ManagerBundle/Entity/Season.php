@@ -35,9 +35,9 @@ class Season
     private $league;
 
     /**
-     * @ORM\OneToOne(targetEntity="Calendar", mappedBy="season")
+     * @ORM\OneToMany(targetEntity="MatchDay", mappedBy="season")
      */
-    private $calendar;
+    private $match_days;
 
 
     /**
@@ -117,5 +117,45 @@ class Season
     public function getCalendar()
     {
         return $this->calendar;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->match_days = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add match_days
+     *
+     * @param \Mf\ManagerBundle\Entity\MatchDay $matchDays
+     * @return Season
+     */
+    public function addMatchDay(\Mf\ManagerBundle\Entity\MatchDay $matchDays)
+    {
+        $this->match_days[] = $matchDays;
+    
+        return $this;
+    }
+
+    /**
+     * Remove match_days
+     *
+     * @param \Mf\ManagerBundle\Entity\MatchDay $matchDays
+     */
+    public function removeMatchDay(\Mf\ManagerBundle\Entity\MatchDay $matchDays)
+    {
+        $this->match_days->removeElement($matchDays);
+    }
+
+    /**
+     * Get match_days
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMatchDays()
+    {
+        return $this->match_days;
     }
 }

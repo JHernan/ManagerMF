@@ -36,12 +36,6 @@ class MatchDay
     private $date;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Calendar", inversedBy="match_days")
-     * @ORM\JoinColumn(name="calendar_id", referencedColumnName="id", nullable=false)
-     */
-    private $calendar;
-
-    /**
      * @ORM\OneToMany(targetEntity="Lineup", mappedBy="match_day")
      */
     private $lineups;
@@ -55,6 +49,12 @@ class MatchDay
      * @ORM\OneToMany(targetEntity="TeamPoint", mappedBy="match_day")
      */
     private $team_points;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Season", inversedBy="match_days")
+     * @ORM\JoinColumn(name="season_id", referencedColumnName="id", nullable=false)
+     */
+    private $season;
 
 
     /**
@@ -113,28 +113,7 @@ class MatchDay
         return $this->date;
     }
 
-    /**
-     * Set calendar
-     *
-     * @param \Mf\ManagerBundle\Entity\Calendar $calendar
-     * @return MatchDay
-     */
-    public function setCalendar(\Mf\ManagerBundle\Entity\Calendar $calendar)
-    {
-        $this->calendar = $calendar;
-    
-        return $this;
-    }
 
-    /**
-     * Get calendar
-     *
-     * @return \Mf\ManagerBundle\Entity\Calendar 
-     */
-    public function getCalendar()
-    {
-        return $this->calendar;
-    }
     /**
      * Constructor
      */
@@ -240,5 +219,28 @@ class MatchDay
     public function getTeamPoints()
     {
         return $this->team_points;
+    }
+
+    /**
+     * Set season
+     *
+     * @param \Mf\ManagerBundle\Entity\Season $season
+     * @return MatchDay
+     */
+    public function setSeason(\Mf\ManagerBundle\Entity\Season $season)
+    {
+        $this->season = $season;
+    
+        return $this;
+    }
+
+    /**
+     * Get season
+     *
+     * @return \Mf\ManagerBundle\Entity\Season 
+     */
+    public function getSeason()
+    {
+        return $this->season;
     }
 }
