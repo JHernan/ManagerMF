@@ -50,6 +50,11 @@ class Team
      */
     private $team_players;
 
+    /**
+     * @ORM\OneToMany(targetEntity="TeamPoint", mappedBy="team")
+     */
+    private $team_points;
+
 
     /**
      * Get id
@@ -201,5 +206,38 @@ class Team
     public function getTeamPlayers()
     {
         return $this->team_players;
+    }
+
+    /**
+     * Add team_points
+     *
+     * @param \Mf\ManagerBundle\Entity\TeamPoint $teamPoints
+     * @return Team
+     */
+    public function addTeamPoint(\Mf\ManagerBundle\Entity\TeamPoint $teamPoints)
+    {
+        $this->team_points[] = $teamPoints;
+    
+        return $this;
+    }
+
+    /**
+     * Remove team_points
+     *
+     * @param \Mf\ManagerBundle\Entity\TeamPoint $teamPoints
+     */
+    public function removeTeamPoint(\Mf\ManagerBundle\Entity\TeamPoint $teamPoints)
+    {
+        $this->team_points->removeElement($teamPoints);
+    }
+
+    /**
+     * Get team_points
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTeamPoints()
+    {
+        return $this->team_points;
     }
 }
