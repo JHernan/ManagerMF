@@ -1,0 +1,12 @@
+services:
+    sonata.admin.user:
+        class: Mf\UserBundle\Admin\Entity\UserAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: user, label: "User" }
+        arguments:
+            - ~
+            - Mf\UserBundle\Entity\User
+            - 'SonataAdminBundle:CRUD' 
+        calls:
+            - [ setTranslationDomain, [MfUserBundle]]
+            - [setUserManager, ["@fos_user.user_manager"]]
