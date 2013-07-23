@@ -35,10 +35,10 @@ class Team
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="League", inversedBy="teams")
-     * @ORM\JoinColumn(name="league_id", referencedColumnName="id", nullable=false)
+     * @ORM\ManyToOne(targetEntity="LeagueSeason", inversedBy="teams")
+     * @ORM\JoinColumn(name="league_season_id", referencedColumnName="id", nullable=false)
      */
-    private $league;
+    private $league_season;
 
     /**
      * @ORM\ManyToMany(targetEntity="Tactic", mappedBy="teams")
@@ -87,29 +87,6 @@ class Team
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set league
-     *
-     * @param \Mf\ManagerBundle\Entity\League $league
-     * @return Team
-     */
-    public function setLeague(\Mf\ManagerBundle\Entity\League $league)
-    {
-        $this->league = $league;
-    
-        return $this;
-    }
-
-    /**
-     * Get league
-     *
-     * @return \Mf\ManagerBundle\Entity\League 
-     */
-    public function getLeague()
-    {
-        return $this->league;
     }
 
     /**
@@ -239,5 +216,28 @@ class Team
     public function getTeamPoints()
     {
         return $this->team_points;
+    }
+
+    /**
+     * Set league_season
+     *
+     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagueSeason
+     * @return Team
+     */
+    public function setLeagueSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leagueSeason)
+    {
+        $this->league_season = $leagueSeason;
+    
+        return $this;
+    }
+
+    /**
+     * Get league_season
+     *
+     * @return \Mf\ManagerBundle\Entity\LeagueSeason 
+     */
+    public function getLeagueSeason()
+    {
+        return $this->league_season;
     }
 }

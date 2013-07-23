@@ -29,15 +29,14 @@ class Season
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="League", inversedBy="seasons")
-     * @ORM\JoinColumn(name="league_id", referencedColumnName="id", nullable=false)
-     */
-    private $league;
-
-    /**
      * @ORM\OneToMany(targetEntity="MatchDay", mappedBy="season")
      */
     private $match_days;
+
+    /**
+     * @ORM\OneToMany(targetEntity="LeagueSeason", mappedBy="season")
+     */
+    private $league_seasons;
 
 
     /**
@@ -48,6 +47,20 @@ class Season
     public function getId()
     {
         return $this->id;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getName();
+    }
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->match_days = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->league_seasons = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -73,38 +86,6 @@ class Season
         return $this->name;
     }
 
-    /**
-     * Set league
-     *
-     * @param \Mf\ManagerBundle\Entity\League $league
-     * @return Season
-     */
-    public function setLeague(\Mf\ManagerBundle\Entity\League $league)
-    {
-        $this->league = $league;
-    
-        return $this;
-    }
-
-    /**
-     * Get league
-     *
-     * @return \Mf\ManagerBundle\Entity\League 
-     */
-    public function getLeague()
-    {
-        return $this->league;
-    }
-
-    
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->match_days = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
     /**
      * Add match_days
      *
@@ -137,4 +118,38 @@ class Season
     {
         return $this->match_days;
     }
+
+    /**
+     * Add league_seasons
+     *
+     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons
+     * @return Season
+     */
+    public function addLeagueSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons)
+    {
+        $this->league_seasons[] = $leagueSeasons;
+    
+        return $this;
+    }
+
+    /**
+     * Remove league_seasons
+     *
+     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons
+     */
+    public function removeLeagueSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons)
+    {
+        $this->league_seasons->removeElement($leagueSeasons);
+    }
+
+    /**
+     * Get league_seasons
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLeagueSeasons()
+    {
+        return $this->league_seasons;
+    }
+    
 }

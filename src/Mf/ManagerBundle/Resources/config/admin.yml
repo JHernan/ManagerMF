@@ -31,3 +31,14 @@ services:
             - 'SonataAdminBundle:CRUD' 
         calls:
             - [ setTranslationDomain, [MfManagerBundle] ]
+
+    sonata.admin.season:
+        class: Mf\ManagerBundle\Admin\Entity\SeasonAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: season, label: "Season" }
+        arguments:
+            - ~
+            - Mf\ManagerBundle\Entity\Season
+            - 'SonataAdminBundle:CRUD' 
+        calls:
+            - [ setTranslationDomain, [MfManagerBundle] ]
