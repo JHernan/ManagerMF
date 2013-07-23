@@ -9,3 +9,14 @@ services:
             - 'SonataAdminBundle:CRUD' 
         calls:
             - [ setTranslationDomain, [MfManagerBundle] ]
+
+    sonata.admin.tactic:
+        class: Mf\ManagerBundle\Admin\Entity\TacticAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: tactic, label: "Tactic" }
+        arguments:
+            - ~
+            - Mf\ManagerBundle\Entity\Tactic
+            - 'SonataAdminBundle:CRUD' 
+        calls:
+            - [ setTranslationDomain, [MfManagerBundle] ]
