@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "dd5fab1afa65ff1db3c6915fb9a4310a",
+    "hash": "890adfb39c70df2c50cdfcce7b5d06d4",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1419,12 +1419,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "1a0681ff2466b29b9fd123e4aad6f65ffad0c6ee"
+                "reference": "b90b666cf2904895f37ce79b70936210188a1b16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/1a0681ff2466b29b9fd123e4aad6f65ffad0c6ee",
-                "reference": "1a0681ff2466b29b9fd123e4aad6f65ffad0c6ee",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/b90b666cf2904895f37ce79b70936210188a1b16",
+                "reference": "b90b666cf2904895f37ce79b70936210188a1b16",
                 "shasum": ""
             },
             "require": {
@@ -1485,7 +1485,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2013-07-19 10:02:30"
+            "time": "2013-07-23 08:24:07"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -2315,16 +2315,16 @@
         },
         {
             "name": "twitter/bootstrap",
-            "version": "dev-master",
+            "version": "v2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twitter/bootstrap.git",
-                "reference": "d991ef2ab1b4d156c7e5d33d052d66f8eaafc460"
+                "reference": "v2.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twitter/bootstrap/zipball/d991ef2ab1b4d156c7e5d33d052d66f8eaafc460",
-                "reference": "d991ef2ab1b4d156c7e5d33d052d66f8eaafc460",
+                "url": "https://api.github.com/repos/twitter/bootstrap/zipball/v2.3.2",
+                "reference": "v2.3.2",
                 "shasum": ""
             },
             "type": "library",
@@ -2338,7 +2338,7 @@
                 "bootstrap",
                 "css"
             ],
-            "time": "2013-06-20 19:11:39"
+            "time": "2013-05-17 17:26:09"
         }
     ],
     "packages-dev": [
@@ -2353,7 +2353,6 @@
         "doctrine/data-fixtures": 20,
         "friendsofsymfony/user-bundle": 20,
         "mopa/bootstrap-bundle": 20,
-        "twitter/bootstrap": 20,
         "sonata-project/admin-bundle": 20,
         "sonata-project/doctrine-orm-admin-bundle": 20,
         "sonata-project/intl-bundle": 20,
