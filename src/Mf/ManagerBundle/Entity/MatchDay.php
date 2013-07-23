@@ -58,10 +58,10 @@ class MatchDay
     private $team_points;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Season", inversedBy="match_days")
-     * @ORM\JoinColumn(name="season_id", referencedColumnName="id", nullable=false)
+     * @ORM\ManyToOne(targetEntity="LeagueSeason", inversedBy="match_days")
+     * @ORM\JoinColumn(name="league_season_id", referencedColumnName="id", nullable=false)
      */
-    private $season;
+    private $league_season;
 
 
     /**
@@ -252,25 +252,25 @@ class MatchDay
     }
 
     /**
-     * Set season
+     * Set league_season
      *
-     * @param \Mf\ManagerBundle\Entity\Season $season
+     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagueSeason
      * @return MatchDay
      */
-    public function setSeason(\Mf\ManagerBundle\Entity\Season $season)
+    public function setLeagueSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leagueSeason)
     {
-        $this->season = $season;
+        $this->league_season = $leagueSeason;
     
         return $this;
     }
 
     /**
-     * Get season
+     * Get league_season
      *
-     * @return \Mf\ManagerBundle\Entity\Season 
+     * @return \Mf\ManagerBundle\Entity\LeagueSeason 
      */
-    public function getSeason()
+    public function getLeagueSeason()
     {
-        return $this->season;
+        return $this->league_season;
     }
 }

@@ -43,6 +43,11 @@ class LeagueSeason
      */
     private $football_teams;
 
+    /**
+     * @ORM\OneToMany(targetEntity="MatchDay", mappedBy="league_season")
+     */
+    private $match_days;
+
 
     /**
      * Get id
@@ -175,4 +180,37 @@ class LeagueSeason
         return $this->football_teams;
     }
     
+
+    /**
+     * Add match_days
+     *
+     * @param \Mf\ManagerBundle\Entity\MatchDay $matchDays
+     * @return LeagueSeason
+     */
+    public function addMatchDay(\Mf\ManagerBundle\Entity\MatchDay $matchDays)
+    {
+        $this->match_days[] = $matchDays;
+    
+        return $this;
+    }
+
+    /**
+     * Remove match_days
+     *
+     * @param \Mf\ManagerBundle\Entity\MatchDay $matchDays
+     */
+    public function removeMatchDay(\Mf\ManagerBundle\Entity\MatchDay $matchDays)
+    {
+        $this->match_days->removeElement($matchDays);
+    }
+
+    /**
+     * Get match_days
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMatchDays()
+    {
+        return $this->match_days;
+    }
 }
