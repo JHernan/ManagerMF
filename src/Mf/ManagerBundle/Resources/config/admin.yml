@@ -1,0 +1,11 @@
+services:
+    sonata.admin.league:
+        class: Mf\ManagerBundle\Admin\Entity\LeagueAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: league, label: "League" }
+        arguments:
+            - ~
+            - Mf\ManagerBundle\Entity\League
+            - 'SonataAdminBundle:CRUD' 
+        calls:
+            - [ setTranslationDomain, [MfManagerBundle] ]
