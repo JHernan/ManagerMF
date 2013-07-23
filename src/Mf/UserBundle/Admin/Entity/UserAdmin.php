@@ -34,7 +34,7 @@ class UserAdmin extends Admin
             ->with('General')
                 ->add('username')
                 ->add('email')
-                ->add('plainPassword', 'text')
+                ->add('plainPassword', 'text', array('required' => false))
             ->end()
             /*
             ->with('Groups')
