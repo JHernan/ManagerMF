@@ -59,6 +59,11 @@ class LeagueSeason
         return $this->id;
     }
 
+    public function __toString()
+    {
+        return (string) $this->getLeague()->getName() . ' - ' . $this->getSeason()->getName();
+    }
+
     /**
      * Constructor
      */

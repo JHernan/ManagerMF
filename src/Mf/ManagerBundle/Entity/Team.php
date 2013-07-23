@@ -64,6 +64,11 @@ class Team
     public function getId()
     {
         return $this->id;
+    }    
+
+    public function __toString()
+    {
+        return (string) $this->getName();
     }
 
     /**
