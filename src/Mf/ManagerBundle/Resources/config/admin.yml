@@ -20,3 +20,14 @@ services:
             - 'SonataAdminBundle:CRUD' 
         calls:
             - [ setTranslationDomain, [MfManagerBundle] ]
+
+    sonata.admin.demarcation:
+        class: Mf\ManagerBundle\Admin\Entity\DemarcationAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: demarcation, label: "Demarcation" }
+        arguments:
+            - ~
+            - Mf\ManagerBundle\Entity\Demarcation
+            - 'SonataAdminBundle:CRUD' 
+        calls:
+            - [ setTranslationDomain, [MfManagerBundle] ]

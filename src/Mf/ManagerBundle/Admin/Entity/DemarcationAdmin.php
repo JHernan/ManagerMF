@@ -7,10 +7,10 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 
-class TacticAdmin extends Admin
+class DemarcationAdmin extends Admin
 {
 
-    protected $baseRouteName = 'tactic_admin';
+    protected $baseRouteName = 'demarcation_admin';
 
     protected function configureListFields(ListMapper $listMapper)
     {
@@ -24,7 +24,7 @@ class TacticAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('name')
-                ->add('demarcations', null,
+                ->add('tactics', null,
                         array('required' => false, 'expanded' => true))
             ->end()
         ;
