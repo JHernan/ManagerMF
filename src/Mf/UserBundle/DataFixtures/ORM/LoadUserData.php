@@ -14,40 +14,42 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager)
     {
+        $salt = '123456';
+        $raw = '123456';
         $users = array(
                         array(
                             'name' => 'ACastilla',
                             'email' => 'test+1@test.com',
-                            'salt' => '123456',
-                            'password' => '123456',
+                            'salt' => $salt,
+                            'password' => md5(md5($raw) . $salt),
                             'enabled' => 1
                             ),
                         array(
                             'name' => 'Rai',
                             'email' => 'test+2@test.com',
-                            'salt' => '123456',
-                            'password' => '123456',
+                            'salt' => $salt,
+                            'password' => md5(md5($raw) . $salt),
                             'enabled' => 1
                             ),
                         array(
                             'name' => 'Arvin',
                             'email' => 'test+3@test.com',
-                            'salt' => '123456',
-                            'password' => '123456',
+                            'salt' => $salt,
+                            'password' => md5(md5($raw) . $salt),
                             'enabled' => 1
                             ),
                         array(
                             'name' => '7Sins',
                             'email' => 'test+4@test.com',
-                            'salt' => '123456',
-                            'password' => '123456',
+                            'salt' => $salt,
+                            'password' => md5(md5($raw) . $salt),
                             'enabled' => 1
                             ),
                         array(
                             'name' => 'Deco',
                             'email' => 'test+5@test.com',
-                            'salt' => '123456',
-                            'password' => '123456',
+                            'salt' => $salt,
+                            'password' => md5(md5($raw) . $salt),
                             'enabled' => 1
                             ),
                         );
