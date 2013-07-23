@@ -17,29 +17,29 @@ class LoadTeamData extends AbstractFixture implements OrderedFixtureInterface
         $teams = array(
                         array(
                             'name' => 'Equipo1',
-                            'league' => 'La Liga',
+                            'league_season' => 'La Liga - 2013/2014',
                             'user' => 'ACastilla'
                             ),
                         array(
                             'name' => 'Equipo2',
-                            'league' => 'La Liga',
+                            'league_season' => 'La Liga - 2013/2014',
                             'user' => 'Rai'
                             ),
                         array(
                             'name' => 'Equipo3',
-                            'league' => 'La Liga',
+                            'league_season' => 'La Liga - 2013/2014',
                             'user' => 'Arvin'
                             ),
                         array(
                             'name' => 'Equipo4',
-                            'league' => 'La Liga',
+                            'league_season' => 'La Liga - 2013/2014',
                             'user' => '7Sins'
                             ),
                         );
         foreach($teams as $item):
             $team = new Team();
             $team->setName($item['name']);
-            $team->setLeague($this->getReference($item['league']));
+            $team->setLeagueSeason($this->getReference($item['league_season']));
             $team->setUser($this->getReference($item['user']));
 
             $manager->persist($team);
@@ -53,7 +53,7 @@ class LoadTeamData extends AbstractFixture implements OrderedFixtureInterface
      */
     public function getOrder()
     {
-        return 21; // the order in which fixtures will be loaded
+        return 27; // the order in which fixtures will be loaded
     }
 }
 

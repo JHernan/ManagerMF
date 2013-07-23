@@ -16,30 +16,22 @@ class LoadSeasonData extends AbstractFixture implements OrderedFixtureInterface
     {
         $seasons = array(
                         array(
-                            'name' => '2013-2014',
-                            'league' => 'La Liga'
+                            'name' => '2013/2014',
                             ),
                         array(
-                            'name' => '2013-2014',
-                            'league' => 'Premier League'
+                            'name' => '2014/2015',
                             ),
                         array(
-                            'name' => '2013-2014',
-                            'league' => 'Calcio'
-                            ),
-                        array(
-                            'name' => '2013-2014',
-                            'league' => 'Bundesliga'
+                            'name' => '2015/2016',
                             ),
                         );
         foreach($seasons as $item):
             $season = new Season();
             $season->setName($item['name']);
-            $season->setLeague($this->getReference('La Liga'));
 
             $manager->persist($season);
 
-            $this->addReference($item['league'] . ' ' . $item['name'], $season);
+            $this->addReference($item['name'], $season);
         endforeach;
         
         $manager->flush();
