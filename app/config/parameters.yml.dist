@@ -13,5 +13,6 @@ parameters:
 
     locale:            es
     secret:            8a16cdd49af77494309e56321f358677
+    cookie_name:       ManagerMF
 
     posts: 100
