@@ -34,12 +34,12 @@ class LeagueSeason
     private $season;
 
     /**
-     * @ORM\OneToMany(targetEntity="Team", mappedBy="league_season")
+     * @ORM\ManyToMany(targetEntity="Team", mappedBy="league_seasons")
      */
     private $teams;
 
     /**
-     * @ORM\OneToMany(targetEntity="FootballTeam", mappedBy="league_season")
+     * @ORM\ManyToMany(targetEntity="FootballTeam", mappedBy="league_seasons")
      */
     private $football_teams;
 

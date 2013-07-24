@@ -35,10 +35,10 @@ class Team
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="LeagueSeason", inversedBy="teams")
-     * @ORM\JoinColumn(name="league_season_id", referencedColumnName="id", nullable=false)
+     * @ORM\ManyToMany(targetEntity="LeagueSeason", inversedBy="teams")
+     * @ORM\JoinTable(name="mf_teams_league_seasons")
      */
-    private $league_season;
+    private $league_seasons;
 
     /**
      * @ORM\ManyToMany(targetEntity="Tactic", mappedBy="teams")
@@ -224,25 +224,35 @@ class Team
     }
 
     /**
-     * Set league_season
+     * Add league_seasons
      *
-     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagueSeason
+     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons
      * @return Team
      */
-    public function setLeagueSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leagueSeason)
+    public function addLeagueSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons)
     {
-        $this->league_season = $leagueSeason;
+        $this->league_seasons[] = $leagueSeasons;
     
         return $this;
     }
 
     /**
-     * Get league_season
+     * Remove league_seasons
      *
-     * @return \Mf\ManagerBundle\Entity\LeagueSeason 
+     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons
      */
-    public function getLeagueSeason()
+    public function removeLeagueSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons)
     {
-        return $this->league_season;
+        $this->league_seasons->removeElement($leagueSeasons);
+    }
+
+    /**
+     * Get league_seasons
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLeagueSeasons()
+    {
+        return $this->league_seasons;
     }
 }
