@@ -53,3 +53,14 @@ services:
             - 'SonataAdminBundle:CRUD' 
         calls:
             - [ setTranslationDomain, [MfManagerBundle] ]
+
+    sonata.admin.match_day:
+        class: Mf\ManagerBundle\Admin\Entity\MatchDayAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: match_day, label: "Match Day" }
+        arguments:
+            - ~
+            - Mf\ManagerBundle\Entity\MatchDay
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [MfManagerBundle] ]

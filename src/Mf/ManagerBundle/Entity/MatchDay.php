@@ -74,6 +74,11 @@ class MatchDay
         return $this->id;
     }
 
+    public function __toString()
+    {
+        return (string) $this->getLeagueSeason()->getLeague()->getName() . ' - ' . $this->getLeagueSeason()->getSeason()->getName() . ' - ' . $this->getName();
+    }
+
     /**
      * Set name
      *
