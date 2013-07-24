@@ -60,6 +60,8 @@ doctrine:
         charset:  UTF8
         mapping_types:
             enum: string
+        types:
+            json: Sonata\Doctrine\Types\JsonType
         # if using pdo_sqlite as your database driver, add the path in parameters.yml
         # e.g. database_path: %kernel.root_dir%/data/data.db3
         # path:     %database_path%
@@ -80,6 +82,13 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: Mf\UserBundle\Entity\User
+    group:
+        group_class: Mf\UserBundle\Entity\Group
+    profile:  # Authentication Form
+        form:
+            type:               fos_user_profile
+            handler:            fos_user.profile.form.handler.default
+            name:               fos_user_profile_form
 
 mopa_bootstrap:
     form:
@@ -123,3 +132,9 @@ sonata_block:
 
         sonata.block.service.text:
         sonata.block.service.rss:
+
+sonata_user:
+    security_acl:     false
+    class:
+        user:         Mf\UserBundle\Entity\User
+        group:        Mf\UserBundle\Entity\Group
