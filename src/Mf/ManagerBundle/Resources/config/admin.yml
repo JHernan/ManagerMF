@@ -75,3 +75,14 @@ services:
             - 'SonataAdminBundle:CRUD'
         calls:
             - [ setTranslationDomain, [MfManagerBundle] ]
+
+    sonata.admin.player:
+        class: Mf\ManagerBundle\Admin\Entity\PlayerAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: player, label: "Player" }
+        arguments:
+            - ~
+            - Mf\ManagerBundle\Entity\Player
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [MfManagerBundle] ]
