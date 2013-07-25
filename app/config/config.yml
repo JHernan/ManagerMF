@@ -99,8 +99,7 @@ mopa_bootstrap:
 
 sonata_admin:
     security:
-        handler: sonata.admin.security.handler.noop
-        #handler: sonata.admin.security.handler.role
+        handler: sonata.admin.security.handler.role
 
     title:      Manager MushoFútbol Admin
     title_logo: /bundles/sonataadmin/logo_title.png
