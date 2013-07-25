@@ -86,3 +86,14 @@ services:
             - 'SonataAdminBundle:CRUD'
         calls:
             - [ setTranslationDomain, [MfManagerBundle] ]
+
+    sonata.admin.tactic_demarcation:
+        class: Mf\ManagerBundle\Admin\Entity\TacticDemarcationAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: tactic_demarcation, label: "Tactic Demarcation" }
+        arguments:
+            - ~
+            - Mf\ManagerBundle\Entity\TacticDemarcation
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [MfManagerBundle] ]

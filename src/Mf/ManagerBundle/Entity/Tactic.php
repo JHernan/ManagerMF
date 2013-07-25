@@ -3,6 +3,7 @@
 namespace Mf\ManagerBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Tactic
@@ -34,9 +35,9 @@ class Tactic
     private $lineups;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Demarcation", mappedBy="tactics")
+     * @ORM\OneToMany(targetEntity="TacticDemarcation", mappedBy="tactic",cascade={"all"}, orphanRemoval=true)
      */
-    private $demarcations;
+    private $tactic_demarcations;
 
 
     /**
@@ -118,36 +119,37 @@ class Tactic
     {
         return $this->lineups;
     }
+
     /**
-     * Add demarcations
+     * Add tactic_demarcations
      *
-     * @param \Mf\ManagerBundle\Entity\Demarcation $demarcations
+     * @param \Mf\ManagerBundle\Entity\TacticDemarcation $tacticDemarcations
      * @return Tactic
      */
-    public function addDemarcation(\Mf\ManagerBundle\Entity\Demarcation $demarcations)
+    public function addTacticDemarcation(\Mf\ManagerBundle\Entity\TacticDemarcation $tacticDemarcations)
     {
-        $this->demarcations[] = $demarcations;
+        $this->tactic_demarcations[] = $tacticDemarcations;
     
         return $this;
     }
 
     /**
-     * Remove demarcations
+     * Remove tactic_demarcations
      *
-     * @param \Mf\ManagerBundle\Entity\Demarcation $demarcations
+     * @param \Mf\ManagerBundle\Entity\TacticDemarcation $tacticDemarcations
      */
-    public function removeDemarcation(\Mf\ManagerBundle\Entity\Demarcation $demarcations)
-    {
-        $this->demarcations->removeElement($demarcations);
+    public function removeTacticDemarcation(\Mf\ManagerBundle\Entity\TacticDemarcation $tacticDemarcations)
+    {   
+        $this->tactic_demarcations->removeElement($tacticDemarcations);
     }
 
     /**
-     * Get demarcations
+     * Get tactic_demarcations
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getDemarcations()
+    public function getTacticDemarcations()
     {
-        return $this->demarcations;
+        return $this->tactic_demarcations;
     }
 }

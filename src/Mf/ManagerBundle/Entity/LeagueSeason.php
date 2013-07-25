@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * LeagueSeason
  *
- * @ORM\Table()
+ * @ORM\Table(name="mf_leagues_seasons")
  * @ORM\Entity(repositoryClass="Mf\ManagerBundle\Entity\LeagueSeasonRepository")
  */
 class LeagueSeason

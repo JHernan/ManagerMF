@@ -29,16 +29,15 @@ class Demarcation
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Tactic", inversedBy="demarcations")
-     * @ORM\JoinTable(name="mf_tactics_demarcations")
-     */
-    private $tactics;
-
-    /**
      * @ORM\ManyToMany(targetEntity="Player", inversedBy="demarcations")
      * @ORM\JoinTable(name="mf_players_demarcations")
      */
     private $players;
+
+    /**
+     * @ORM\OneToMany(targetEntity="TacticDemarcation", mappedBy="demarcation",cascade={"all"})
+     */
+    private $tactic_demarcations;
 
 
     /**
@@ -85,39 +84,6 @@ class Demarcation
     {
         $this->tactics = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
-    /**
-     * Add tactics
-     *
-     * @param \Mf\ManagerBundle\Entity\Tactic $tactics
-     * @return Demarcation
-     */
-    public function addTactic(\Mf\ManagerBundle\Entity\Tactic $tactics)
-    {
-        $this->tactics[] = $tactics;
-    
-        return $this;
-    }
-
-    /**
-     * Remove tactics
-     *
-     * @param \Mf\ManagerBundle\Entity\Tactic $tactics
-     */
-    public function removeTactic(\Mf\ManagerBundle\Entity\Tactic $tactics)
-    {
-        $this->tactics->removeElement($tactics);
-    }
-
-    /**
-     * Get tactics
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getTactics()
-    {
-        return $this->tactics;
-    }
 
     /**
      * Add players
@@ -150,5 +116,38 @@ class Demarcation
     public function getPlayers()
     {
         return $this->players;
+    }
+
+    /**
+     * Add tactic_demarcations
+     *
+     * @param \Mf\ManagerBundle\Entity\TacticDemarcation $tacticDemarcations
+     * @return Demarcation
+     */
+    public function addTacticDemarcation(\Mf\ManagerBundle\Entity\TacticDemarcation $tacticDemarcations)
+    {
+        $this->tactic_demarcations[] = $tacticDemarcations;
+    
+        return $this;
+    }
+
+    /**
+     * Remove tactic_demarcations
+     *
+     * @param \Mf\ManagerBundle\Entity\TacticDemarcation $tacticDemarcations
+     */
+    public function removeTacticDemarcation(\Mf\ManagerBundle\Entity\TacticDemarcation $tacticDemarcations)
+    {
+        $this->tactic_demarcations->removeElement($tacticDemarcations);
+    }
+
+    /**
+     * Get tactic_demarcations
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTacticDemarcations()
+    {
+        return $this->tactic_demarcations;
     }
 }

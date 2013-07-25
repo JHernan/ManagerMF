@@ -23,8 +23,16 @@ class TacticAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('name')
-                ->add('demarcations', null,
-                        array('required' => false, 'expanded' => true))
+                ->add('tactic_demarcations', 'sonata_type_collection', array(
+                    'cascade_validation' => true,
+                    'by_reference' => false,
+                        ), array(
+                    'edit' => 'inline',
+                    'inline' => 'table',
+                    'sortable' => 'position',
+                    'link_parameters' => array('context' => 'default'),
+                        )
+                )
             ->end()
         ;
     }
