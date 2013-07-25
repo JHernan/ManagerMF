@@ -23,27 +23,10 @@ class LeagueAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('name')
-                ->add('seasons', 'entity', 
+                ->add('league_seasons', 'entity', 
                     array(
-                        'class' => 'Mf\ManagerBundle\Entity\Season',
+                        'class' => 'Mf\ManagerBundle\Entity\LeagueSeason',
                         'required' => false,
-                        'property' => 'name',
-                        'multiple' => true
-                        )
-                    )
-                ->add('teams', 'entity', 
-                    array(
-                        'class' => 'Mf\ManagerBundle\Entity\Team',
-                        'required' => false,
-                        'property' => 'name',
-                        'multiple' => true
-                        )
-                    )
-                ->add('football_teams', 'entity', 
-                    array(
-                        'class' => 'Mf\ManagerBundle\Entity\FootballTeam',
-                        'required' => false,
-                        'property' => 'name',
                         'multiple' => true
                         )
                     )
