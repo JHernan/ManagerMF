@@ -34,12 +34,6 @@ class Tactic
     private $lineups;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Team", inversedBy="tactics")
-     * @ORM\JoinTable(name="mf_teams_tactics")
-     */
-    private $teams;
-
-    /**
      * @ORM\ManyToMany(targetEntity="Demarcation", mappedBy="tactics")
      */
     private $demarcations;
@@ -124,40 +118,6 @@ class Tactic
     {
         return $this->lineups;
     }
-
-    /**
-     * Add teams
-     *
-     * @param \Mf\ManagerBundle\Entity\Team $teams
-     * @return Tactic
-     */
-    public function addTeam(\Mf\ManagerBundle\Entity\Team $teams)
-    {
-        $this->teams[] = $teams;
-    
-        return $this;
-    }
-
-    /**
-     * Remove teams
-     *
-     * @param \Mf\ManagerBundle\Entity\Team $teams
-     */
-    public function removeTeam(\Mf\ManagerBundle\Entity\Team $teams)
-    {
-        $this->teams->removeElement($teams);
-    }
-
-    /**
-     * Get teams
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getTeams()
-    {
-        return $this->teams;
-    }
-
     /**
      * Add demarcations
      *

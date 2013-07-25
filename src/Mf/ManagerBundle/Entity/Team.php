@@ -41,11 +41,6 @@ class Team
     private $league_seasons;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Tactic", mappedBy="teams")
-     */
-    private $tactics;
-
-    /**
      * @ORM\OneToMany(targetEntity="TeamPlayer", mappedBy="team")
      */
     private $team_players;
@@ -122,39 +117,6 @@ class Team
     public function __construct()
     {
         $this->tactics = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
-    /**
-     * Add tactics
-     *
-     * @param \Mf\ManagerBundle\Entity\Tactic $tactics
-     * @return Team
-     */
-    public function addTactic(\Mf\ManagerBundle\Entity\Tactic $tactics)
-    {
-        $this->tactics[] = $tactics;
-    
-        return $this;
-    }
-
-    /**
-     * Remove tactics
-     *
-     * @param \Mf\ManagerBundle\Entity\Tactic $tactics
-     */
-    public function removeTactic(\Mf\ManagerBundle\Entity\Tactic $tactics)
-    {
-        $this->tactics->removeElement($tactics);
-    }
-
-    /**
-     * Get tactics
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getTactics()
-    {
-        return $this->tactics;
     }
 
     /**
