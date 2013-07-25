@@ -50,6 +50,11 @@ class Team
      */
     private $team_points;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Lineup", mappedBy="team")
+     */
+    private $lineups;
+
 
     /**
      * Get id
@@ -216,5 +221,38 @@ class Team
     public function getLeagueSeasons()
     {
         return $this->league_seasons;
+    }
+
+    /**
+     * Add lineups
+     *
+     * @param \Mf\ManagerBundle\Entity\Lineup $lineups
+     * @return Team
+     */
+    public function addLineup(\Mf\ManagerBundle\Entity\Lineup $lineups)
+    {
+        $this->lineups[] = $lineups;
+    
+        return $this;
+    }
+
+    /**
+     * Remove lineups
+     *
+     * @param \Mf\ManagerBundle\Entity\Lineup $lineups
+     */
+    public function removeLineup(\Mf\ManagerBundle\Entity\Lineup $lineups)
+    {
+        $this->lineups->removeElement($lineups);
+    }
+
+    /**
+     * Get lineups
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLineups()
+    {
+        return $this->lineups;
     }
 }

@@ -39,6 +39,12 @@ class Lineup
      */
     private $team_players;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Team", inversedBy="lineups")
+     * @ORM\JoinColumn(name="team_id", referencedColumnName="id", nullable=false)
+     */
+    private $team;
+
 
     /**
      * Get id
@@ -134,5 +140,28 @@ class Lineup
     public function getTeamPlayers()
     {
         return $this->team_players;
+    }
+
+    /**
+     * Set team
+     *
+     * @param \Mf\ManagerBundle\Entity\Team $team
+     * @return Lineup
+     */
+    public function setTeam(\Mf\ManagerBundle\Entity\Team $team)
+    {
+        $this->team = $team;
+    
+        return $this;
+    }
+
+    /**
+     * Get team
+     *
+     * @return \Mf\ManagerBundle\Entity\Team 
+     */
+    public function getTeam()
+    {
+        return $this->team;
     }
 }
