@@ -22,29 +22,29 @@ class LeagueSeason
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="League", inversedBy="league_seasons")
+     * @ORM\ManyToOne(targetEntity="League", inversedBy="seasons")
      * @ORM\JoinColumn(name="league_id", referencedColumnName="id", nullable=false)
      */
     private $league;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Season", inversedBy="league_seasons")
+     * @ORM\ManyToOne(targetEntity="Season", inversedBy="leagues")
      * @ORM\JoinColumn(name="season_id", referencedColumnName="id", nullable=false)
      */
     private $season;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Team", mappedBy="league_seasons")
+     * @ORM\ManyToMany(targetEntity="Team", mappedBy="leagues_seasons")
      */
     private $teams;
 
     /**
-     * @ORM\ManyToMany(targetEntity="FootballTeam", mappedBy="league_seasons")
+     * @ORM\ManyToMany(targetEntity="FootballTeam", mappedBy="leagues_seasons")
      */
     private $football_teams;
 
     /**
-     * @ORM\OneToMany(targetEntity="MatchDay", mappedBy="league_season")
+     * @ORM\OneToMany(targetEntity="MatchDay", mappedBy="leagues_seasons")
      */
     private $match_days;
 
@@ -62,15 +62,6 @@ class LeagueSeason
     public function __toString()
     {
         return (string) $this->getLeague()->getName() . ' - ' . $this->getSeason()->getName();
-    }
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->teams = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->football_teams = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -217,5 +208,15 @@ class LeagueSeason
     public function getMatchDays()
     {
         return $this->match_days;
+    }    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->teams = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->football_teams = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->match_days = new \Doctrine\Common\Collections\ArrayCollection();
     }
+    
 }

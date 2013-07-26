@@ -14,7 +14,7 @@ class LoadLeagueSeasonData extends AbstractFixture implements OrderedFixtureInte
      */
     public function load(ObjectManager $manager)
     {
-        $league_seasons = array(
+        $leagues_seasons = array(
                             array(
                                 'league' => 'La Liga',
                                 'season' => '2013/2014'
@@ -49,7 +49,7 @@ class LoadLeagueSeasonData extends AbstractFixture implements OrderedFixtureInte
                                 ),
                             );
 
-        foreach($league_seasons as $item):
+        foreach($leagues_seasons as $item):
             $league_season = new LeagueSeason();
             $league_season->setLeague($this->getReference($item['league']));
             $league_season->setSeason($this->getReference($item['season']));

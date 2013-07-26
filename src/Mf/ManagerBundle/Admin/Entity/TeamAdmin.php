@@ -16,7 +16,7 @@ class TeamAdmin extends Admin
         $listMapper
             ->addIdentifier('name')
             ->add('user')
-            ->add('league_seasons')
+            ->add('leagues_seasons')
         ;
     }
 
@@ -26,7 +26,7 @@ class TeamAdmin extends Admin
             ->with('General')
                 ->add('name')
                 ->add('user')
-                ->add('league_seasons')
+                ->add('leagues_seasons')
                 ->add('team_players', null,
                         array('required' => false, 'expanded' => true))
                 ->add('team_points', null,
@@ -40,7 +40,7 @@ class TeamAdmin extends Admin
         $filter            
             ->add('name')
             ->add('user')
-            ->add('league_seasons')
+            ->add('leagues_seasons')
         ;
     }
 }

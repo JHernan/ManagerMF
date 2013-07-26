@@ -22,13 +22,13 @@ class TacticDemarcation
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Tactic", inversedBy="tactic_demarcations")
+     * @ORM\ManyToOne(targetEntity="Tactic", inversedBy="demarcations")
      * @ORM\JoinColumn(name="tactic_id", referencedColumnName="id", nullable=false)
      */
     private $tactic;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Demarcation", inversedBy="tactic_demarcations")
+     * @ORM\ManyToOne(targetEntity="Demarcation", inversedBy="tactics")
      * @ORM\JoinColumn(name="demarcation_id", referencedColumnName="id", nullable=false)
      */
     private $demarcation;

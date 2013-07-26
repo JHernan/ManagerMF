@@ -61,7 +61,7 @@ class MatchDay
      * @ORM\ManyToOne(targetEntity="LeagueSeason", inversedBy="match_days")
      * @ORM\JoinColumn(name="league_season_id", referencedColumnName="id", nullable=false)
      */
-    private $league_season;
+    private $leagues_seasons;
 
 
     /**
@@ -76,7 +76,7 @@ class MatchDay
 
     public function __toString()
     {
-        return (string) $this->getLeagueSeason()->getLeague()->getName() . ' - ' . $this->getLeagueSeason()->getSeason()->getName() . ' - ' . $this->getName();
+        return (string) $this->getLeaguesSeasons()->getLeague()->getName() . ' - ' . $this->getLeaguesSeasons()->getSeason()->getName() . ' - ' . $this->getName();
     }
 
     /**
@@ -146,15 +146,6 @@ class MatchDay
     public function getEndDate()
     {
         return $this->end_date;
-    }
-
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->lineups = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     /**
@@ -255,27 +246,37 @@ class MatchDay
     {
         return $this->team_points;
     }
-
+    
     /**
-     * Set league_season
+     * Set leagues_seasons
      *
-     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagueSeason
+     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leaguesSeasons
      * @return MatchDay
      */
-    public function setLeagueSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leagueSeason)
+    public function setLeaguesSeasons(\Mf\ManagerBundle\Entity\LeagueSeason $leaguesSeasons)
     {
-        $this->league_season = $leagueSeason;
+        $this->leagues_seasons = $leaguesSeasons;
     
         return $this;
     }
 
     /**
-     * Get league_season
+     * Get leagues_seasons
      *
      * @return \Mf\ManagerBundle\Entity\LeagueSeason 
      */
-    public function getLeagueSeason()
+    public function getLeaguesSeasons()
     {
-        return $this->league_season;
+        return $this->leagues_seasons;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->lineups = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->player_points = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->team_points = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
 }

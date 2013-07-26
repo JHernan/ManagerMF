@@ -39,7 +39,7 @@ class LoadFootballTeamData extends AbstractFixture implements OrderedFixtureInte
         foreach($football_teams as $item):
             $football_team = new FootballTeam();
             $football_team->setName($item);
-            $football_team->addLeagueSeason($this->getReference('La Liga - 2013/2014'));
+            $football_team->addLeaguesSeason($this->getReference('La Liga - 2013/2014'));
 
             $manager->persist($football_team);
 

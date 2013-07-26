@@ -35,7 +35,7 @@ class Lineup
 
     /**
      * @ORM\ManyToMany(targetEntity="TeamPlayer", inversedBy="lineups")
-     * @ORM\JoinTable(name="mf_lineups_teamplayers")
+     * @ORM\JoinTable(name="mf_lineups_team_players")
      */
     private $team_players;
 
@@ -77,13 +77,6 @@ class Lineup
     public function getMatchDay()
     {
         return $this->match_day;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->tactics = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -163,5 +156,13 @@ class Lineup
     public function getTeam()
     {
         return $this->team;
+    }    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->team_players = new \Doctrine\Common\Collections\ArrayCollection();
     }
+    
 }

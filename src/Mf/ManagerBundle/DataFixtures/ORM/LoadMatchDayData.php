@@ -51,7 +51,7 @@ class LoadMatchDayData extends AbstractFixture implements OrderedFixtureInterfac
             $match_day->setName($item['name']);            
             $match_day->setStartDate(new \DateTime($item['start_date']));
             $match_day->setEndDate(new \DateTime($item['end_date']));
-            $match_day->setLeagueSeason($this->getReference($item['league_season']));
+            $match_day->setLeaguesSeasons($this->getReference($item['league_season']));
 
             $manager->persist($match_day);
         endforeach;

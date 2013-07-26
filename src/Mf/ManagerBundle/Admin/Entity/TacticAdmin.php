@@ -23,7 +23,7 @@ class TacticAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('name')
-                ->add('tactic_demarcations', 'sonata_type_collection', array(
+                ->add('demarcations', 'sonata_type_collection', array(
                     'cascade_validation' => true,
                     'by_reference' => false,
                         ), array(

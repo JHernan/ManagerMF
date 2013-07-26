@@ -23,7 +23,7 @@ class FootballTeamAdmin extends Admin
         $formMapper
             ->with('General')
             ->add('name')
-            ->add('league_seasons')
+            ->add('leagues_seasons')
             ->add('players')
             ->end()
         ;
@@ -33,7 +33,7 @@ class FootballTeamAdmin extends Admin
     {
         $filter
             ->add('name')
-            ->add('league_seasons')
+            ->add('leagues_seasons')
         ;
     }
 }

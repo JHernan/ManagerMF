@@ -31,7 +31,7 @@ class League
     /**
      * @ORM\OneToMany(targetEntity="LeagueSeason", mappedBy="league")
      */
-    private $league_seasons;
+    private $seasons;
 
 
     /**
@@ -42,14 +42,6 @@ class League
     public function getId()
     {
         return $this->id;
-    }
-    
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->league_seasons = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     public function __toString()
@@ -78,39 +70,46 @@ class League
     public function getName()
     {
         return $this->name;
-    }
-
+    }  
+    
     /**
-     * Add league_seasons
+     * Add seasons
      *
-     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons
+     * @param \Mf\ManagerBundle\Entity\LeagueSeason $seasons
      * @return League
      */
-    public function addLeagueSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons)
+    public function addSeason(\Mf\ManagerBundle\Entity\LeagueSeason $seasons)
     {
-        $this->league_seasons[] = $leagueSeasons;
+        $this->seasons[] = $seasons;
     
         return $this;
     }
 
     /**
-     * Remove league_seasons
+     * Remove seasons
      *
-     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons
+     * @param \Mf\ManagerBundle\Entity\LeagueSeason $seasons
      */
-    public function removeLeagueSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons)
+    public function removeSeason(\Mf\ManagerBundle\Entity\LeagueSeason $seasons)
     {
-        $this->league_seasons->removeElement($leagueSeasons);
+        $this->seasons->removeElement($seasons);
     }
 
     /**
-     * Get league_seasons
+     * Get seasons
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getLeagueSeasons()
+    public function getSeasons()
     {
-        return $this->league_seasons;
+        return $this->seasons;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->seasons = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
 }

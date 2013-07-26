@@ -15,7 +15,7 @@ class MatchDayAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name')
-            ->add('league_season')
+            ->add('leagues_seasons')
             ->add('start_date')
             ->add('end_date')
         ;
@@ -26,7 +26,7 @@ class MatchDayAdmin extends Admin
         $formMapper
             ->with('General')
             ->add('name')
-            ->add('league_season')
+            ->add('leagues_seasons')
             ->add('start_date')
             ->add('end_date')
             ->end()
@@ -37,7 +37,7 @@ class MatchDayAdmin extends Admin
     {
         $filter
             ->add('name')
-            ->add('league_season')
+            ->add('leagues_seasons')
             ->add('start_date')
             ->add('end_date')
         ;

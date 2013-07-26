@@ -39,7 +39,7 @@ class LoadTeamData extends AbstractFixture implements OrderedFixtureInterface
         foreach($teams as $item):
             $team = new Team();
             $team->setName($item['name']);
-            $team->addLeagueSeason($this->getReference($item['league_season']));
+            $team->addLeaguesSeason($this->getReference($item['league_season']));
             $team->setUser($this->getReference($item['user']));
 
             $manager->persist($team);

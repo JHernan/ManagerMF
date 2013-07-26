@@ -35,9 +35,9 @@ class Demarcation
     private $players;
 
     /**
-     * @ORM\OneToMany(targetEntity="TacticDemarcation", mappedBy="demarcation",cascade={"all"})
+     * @ORM\OneToMany(targetEntity="TacticDemarcation", mappedBy="demarcation", cascade={"all"})
      */
-    private $tactic_demarcations;
+    private $tactics;
 
 
     /**
@@ -77,13 +77,6 @@ class Demarcation
     {
         return $this->name;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->tactics = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Add players
@@ -117,37 +110,46 @@ class Demarcation
     {
         return $this->players;
     }
-
+    
     /**
-     * Add tactic_demarcations
+     * Add tactics
      *
-     * @param \Mf\ManagerBundle\Entity\TacticDemarcation $tacticDemarcations
+     * @param \Mf\ManagerBundle\Entity\TacticDemarcation $tactics
      * @return Demarcation
      */
-    public function addTacticDemarcation(\Mf\ManagerBundle\Entity\TacticDemarcation $tacticDemarcations)
+    public function addTactic(\Mf\ManagerBundle\Entity\TacticDemarcation $tactics)
     {
-        $this->tactic_demarcations[] = $tacticDemarcations;
+        $this->tactics[] = $tactics;
     
         return $this;
     }
 
     /**
-     * Remove tactic_demarcations
+     * Remove tactics
      *
-     * @param \Mf\ManagerBundle\Entity\TacticDemarcation $tacticDemarcations
+     * @param \Mf\ManagerBundle\Entity\TacticDemarcation $tactics
      */
-    public function removeTacticDemarcation(\Mf\ManagerBundle\Entity\TacticDemarcation $tacticDemarcations)
+    public function removeTactic(\Mf\ManagerBundle\Entity\TacticDemarcation $tactics)
     {
-        $this->tactic_demarcations->removeElement($tacticDemarcations);
+        $this->tactics->removeElement($tactics);
     }
 
     /**
-     * Get tactic_demarcations
+     * Get tactics
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getTacticDemarcations()
+    public function getTactics()
     {
-        return $this->tactic_demarcations;
+        return $this->tactics;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->players = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tactics = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
 }

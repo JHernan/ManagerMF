@@ -30,9 +30,9 @@ class FootballTeam
 
     /**
      * @ORM\ManyToMany(targetEntity="LeagueSeason", inversedBy="football_teams")
-     * @ORM\JoinTable(name="mf_football_teams_league_seasons")
+     * @ORM\JoinTable(name="mf_football_teams_leagues_seasons")
      */
-    private $league_seasons;
+    private $leagues_seasons;
 
     /**
      * @ORM\OneToMany(targetEntity="Player", mappedBy="football_team")
@@ -79,14 +79,6 @@ class FootballTeam
     }
     
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->players = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
-    /**
      * Add players
      *
      * @param \Mf\ManagerBundle\Entity\Player $players
@@ -118,37 +110,46 @@ class FootballTeam
     {
         return $this->players;
     }
-
+    
     /**
-     * Add league_seasons
+     * Add leagues_seasons
      *
-     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons
+     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leaguesSeasons
      * @return FootballTeam
      */
-    public function addLeagueSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons)
+    public function addLeaguesSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leaguesSeasons)
     {
-        $this->league_seasons[] = $leagueSeasons;
+        $this->leagues_seasons[] = $leaguesSeasons;
     
         return $this;
     }
 
     /**
-     * Remove league_seasons
+     * Remove leagues_seasons
      *
-     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons
+     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leaguesSeasons
      */
-    public function removeLeagueSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons)
+    public function removeLeaguesSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leaguesSeasons)
     {
-        $this->league_seasons->removeElement($leagueSeasons);
+        $this->leagues_seasons->removeElement($leaguesSeasons);
     }
 
     /**
-     * Get league_seasons
+     * Get leagues_seasons
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getLeagueSeasons()
+    public function getLeaguesSeasons()
     {
-        return $this->league_seasons;
+        return $this->leagues_seasons;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->leagues_seasons = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->players = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
 }

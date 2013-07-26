@@ -31,7 +31,7 @@ class Season
     /**
      * @ORM\OneToMany(targetEntity="LeagueSeason", mappedBy="season")
      */
-    private $league_seasons;
+    private $leagues;
 
 
     /**
@@ -47,15 +47,6 @@ class Season
     public function __toString()
     {
         return (string) $this->getName();
-    }
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->match_days = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->league_seasons = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -79,39 +70,46 @@ class Season
     public function getName()
     {
         return $this->name;
-    }
-
+    }   
+    
     /**
-     * Add league_seasons
+     * Add leagues
      *
-     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons
+     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagues
      * @return Season
      */
-    public function addLeagueSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons)
+    public function addLeague(\Mf\ManagerBundle\Entity\LeagueSeason $leagues)
     {
-        $this->league_seasons[] = $leagueSeasons;
+        $this->leagues[] = $leagues;
     
         return $this;
     }
 
     /**
-     * Remove league_seasons
+     * Remove leagues
      *
-     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons
+     * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagues
      */
-    public function removeLeagueSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leagueSeasons)
+    public function removeLeague(\Mf\ManagerBundle\Entity\LeagueSeason $leagues)
     {
-        $this->league_seasons->removeElement($leagueSeasons);
+        $this->leagues->removeElement($leagues);
     }
 
     /**
-     * Get league_seasons
+     * Get leagues
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getLeagueSeasons()
+    public function getLeagues()
     {
-        return $this->league_seasons;
+        return $this->leagues;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->leagues = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
 }

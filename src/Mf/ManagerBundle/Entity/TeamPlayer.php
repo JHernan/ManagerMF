@@ -99,13 +99,6 @@ class TeamPlayer
     {
         return $this->player;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->lineups = new \Doctrine\Common\Collections\ArrayCollection();
-    }
     
     /**
      * Add lineups
@@ -172,4 +165,13 @@ class TeamPlayer
     {
         return $this->player_points;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->lineups = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->player_points = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
 }

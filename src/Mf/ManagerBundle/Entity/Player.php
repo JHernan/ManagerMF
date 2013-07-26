@@ -105,14 +105,7 @@ class Player
     {
         return $this->football_team;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->demarcations = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
+        
     /**
      * Add demarcations
      *
@@ -178,4 +171,13 @@ class Player
     {
         return $this->team_players;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->demarcations = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->team_players = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
 }
