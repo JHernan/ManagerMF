@@ -15,6 +15,7 @@ class PlayerAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name')
+            ->add('active', null, array('editable' => true))
             ->add('football_team')
         ;
     }
@@ -24,6 +25,7 @@ class PlayerAdmin extends Admin
         $formMapper
             ->with('General')
             ->add('name')
+            ->add('active')
             ->add('football_team')
             ->add('demarcations', null,
                 array('required' => false, 'expanded' => true))
@@ -37,6 +39,7 @@ class PlayerAdmin extends Admin
     {
         $filter
             ->add('name')
+            ->add('active')
             ->add('football_team')
         ;
     }

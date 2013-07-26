@@ -29,6 +29,13 @@ class Player
     private $name;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="active", type="boolean")
+     */
+    private $active;
+
+    /**
      * @ORM\ManyToOne(targetEntity="FootballTeam", inversedBy="players")
      * @ORM\JoinColumn(name="football_team_id", referencedColumnName="id", nullable=false)
      */
@@ -81,6 +88,29 @@ class Player
     public function getName()
     {
         return $this->name;
+    }    
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     * @return Player
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+    
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean 
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 
     /**
@@ -179,5 +209,4 @@ class Player
         $this->demarcations = new \Doctrine\Common\Collections\ArrayCollection();
         $this->team_players = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
 }

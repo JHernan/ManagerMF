@@ -201,11 +201,12 @@ class LoadPlayerData extends AbstractFixture implements OrderedFixtureInterface
                             ),
                         );
         foreach($teams as $item):
-            $team = new Player();
-            $team->setName($item['name']);
-            $team->setFootballTeam($this->getReference($item['football_team']));
+            $player = new Player();
+            $player->setName($item['name']);
+            $player->setActive(true);
+            $player->setFootballTeam($this->getReference($item['football_team']));
 
-            $manager->persist($team);
+            $manager->persist($player);
         endforeach;
         
         $manager->flush();
