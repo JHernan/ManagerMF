@@ -35,7 +35,7 @@ class Demarcation
     private $players;
 
     /**
-     * @ORM\OneToMany(targetEntity="TacticDemarcation", mappedBy="demarcation", cascade={"all"})
+     * @ORM\OneToMany(targetEntity="TacticDemarcation", mappedBy="demarcation", cascade={"all"}, orphanRemoval=true)
      */
     private $tactics;
 
