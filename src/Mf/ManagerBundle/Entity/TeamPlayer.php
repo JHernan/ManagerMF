@@ -28,7 +28,7 @@ class TeamPlayer
     private $team;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Player", inversedBy="team_players")
+     * @ORM\ManyToOne(targetEntity="Player", inversedBy="team_players", cascade={"all"})
      * @ORM\JoinColumn(name="player_id", referencedColumnName="id", nullable=false)
      */
     private $player;

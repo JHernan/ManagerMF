@@ -42,7 +42,7 @@ class Player
     private $football_team;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Demarcation", mappedBy="players")
+     * @ORM\ManyToMany(targetEntity="Demarcation", mappedBy="players", cascade={"persist"})
      */
     private $demarcations;
 
@@ -144,6 +144,7 @@ class Player
      */
     public function addDemarcation(\Mf\ManagerBundle\Entity\Demarcation $demarcations)
     {
+        $demarcations->addPlayer($this);
         $this->demarcations[] = $demarcations;
     
         return $this;

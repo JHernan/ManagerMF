@@ -41,6 +41,7 @@ class PlayerAdmin extends Admin
             ->add('name')
             ->add('active')
             ->add('football_team')
+            ->add('demarcations')
         ;
     }
 }

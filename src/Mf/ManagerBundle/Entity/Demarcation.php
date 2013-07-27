@@ -29,7 +29,7 @@ class Demarcation
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Player", inversedBy="demarcations")
+     * @ORM\ManyToMany(targetEntity="Player", inversedBy="demarcations", cascade={"persist"})
      * @ORM\JoinTable(name="mf_players_demarcations")
      */
     private $players;
