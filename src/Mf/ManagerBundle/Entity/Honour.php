@@ -50,6 +50,11 @@ class Honour
         return $this->id;
     }
 
+    public function __toString()
+    {
+        return (string) $this->getUser()->getUsername() . ' - ' . $this->getLeaguesSeasons();
+    }
+
     /**
      * Set position
      *
