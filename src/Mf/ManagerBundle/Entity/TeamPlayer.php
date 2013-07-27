@@ -54,6 +54,11 @@ class TeamPlayer
         return $this->id;
     }
 
+    public function __toString()
+    {
+        return (string) $this->getPlayer()->getName();
+    }
+
     /**
      * Set team
      *

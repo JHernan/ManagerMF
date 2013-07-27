@@ -187,18 +187,6 @@ class LoadPlayerData extends AbstractFixture implements OrderedFixtureInterface
                             'name' => 'Villa',
                             'football_team' => 'Atlético de Madrid',
                             ),
-                        array(
-                            'name' => 'Juanfran',
-                            'football_team' => 'Atlético de Madrid',
-                            ),
-                        array(
-                            'name' => 'Juanfran',
-                            'football_team' => 'Atlético de Madrid',
-                            ),
-                        array(
-                            'name' => 'Juanfran',
-                            'football_team' => 'Atlético de Madrid',
-                            ),
                         );
         foreach($teams as $item):
             $player = new Player();
@@ -207,6 +195,8 @@ class LoadPlayerData extends AbstractFixture implements OrderedFixtureInterface
             $player->setFootballTeam($this->getReference($item['football_team']));
 
             $manager->persist($player);
+
+            $this->addReference($item['name'], $player);
         endforeach;
         
         $manager->flush();

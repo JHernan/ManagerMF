@@ -43,6 +43,8 @@ class LoadTeamData extends AbstractFixture implements OrderedFixtureInterface
             $team->setUser($this->getReference($item['user']));
 
             $manager->persist($team);
+
+            $this->addReference($item['name'], $team);
         endforeach;
         
         $manager->flush();
