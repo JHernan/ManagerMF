@@ -15,6 +15,7 @@ class SeasonAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name')
+            ->add('active')
         ;
     }
 
@@ -23,6 +24,7 @@ class SeasonAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('name')
+                ->add('active')
             ->end()
         ;
     }
@@ -31,6 +33,7 @@ class SeasonAdmin extends Admin
     {
         $filter
             ->add('name')
+            ->add('active')
         ;
     }
 }

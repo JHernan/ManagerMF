@@ -29,6 +29,13 @@ class Season
     private $name;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="active", type="boolean")
+     */
+    private $active;
+
+    /**
      * @ORM\OneToMany(targetEntity="LeagueSeason", mappedBy="season")
      */
     private $leagues;
@@ -73,6 +80,29 @@ class Season
     }   
     
     /**
+     * Set active
+     *
+     * @param boolean $active
+     * @return Season
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+    
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean 
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+    
+    /**
      * Add leagues
      *
      * @param \Mf\ManagerBundle\Entity\LeagueSeason $leagues
@@ -104,6 +134,7 @@ class Season
     {
         return $this->leagues;
     }
+    
     /**
      * Constructor
      */
@@ -111,5 +142,4 @@ class Season
     {
         $this->leagues = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
 }

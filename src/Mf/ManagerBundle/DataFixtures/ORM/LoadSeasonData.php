@@ -17,17 +17,21 @@ class LoadSeasonData extends AbstractFixture implements OrderedFixtureInterface
         $seasons = array(
                         array(
                             'name' => '2013/2014',
+                            'active' => true
                             ),
                         array(
                             'name' => '2014/2015',
+                            'active' => false
                             ),
                         array(
                             'name' => '2015/2016',
+                            'active' => false
                             ),
                         );
         foreach($seasons as $item):
             $season = new Season();
             $season->setName($item['name']);
+            $season->setActive($item['active']);
 
             $manager->persist($season);
 
