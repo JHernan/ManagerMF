@@ -23,6 +23,11 @@ class User extends BaseUser
      */
     private $teams;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Mf\ManagerBundle\Entity\Honour", mappedBy="user")
+     */
+    private $honours;
+
     public function __construct()
     {
         parent::__construct();
@@ -74,5 +79,38 @@ class User extends BaseUser
     public function getTeams()
     {
         return $this->teams;
+    }
+
+    /**
+     * Add honours
+     *
+     * @param \Mf\ManagerBundle\Entity\Honour $honours
+     * @return User
+     */
+    public function addHonour(\Mf\ManagerBundle\Entity\Honour $honours)
+    {
+        $this->honours[] = $honours;
+    
+        return $this;
+    }
+
+    /**
+     * Remove honours
+     *
+     * @param \Mf\ManagerBundle\Entity\Honour $honours
+     */
+    public function removeHonour(\Mf\ManagerBundle\Entity\Honour $honours)
+    {
+        $this->honours->removeElement($honours);
+    }
+
+    /**
+     * Get honours
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getHonours()
+    {
+        return $this->honours;
     }
 }

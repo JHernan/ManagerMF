@@ -48,6 +48,11 @@ class LeagueSeason
      */
     private $match_days;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Honour", mappedBy="leagues_seasons")
+     */
+    private $honours;
+
 
     /**
      * Get id
@@ -219,4 +224,37 @@ class LeagueSeason
         $this->match_days = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
+
+    /**
+     * Add honours
+     *
+     * @param \Mf\ManagerBundle\Entity\Honour $honours
+     * @return LeagueSeason
+     */
+    public function addHonour(\Mf\ManagerBundle\Entity\Honour $honours)
+    {
+        $this->honours[] = $honours;
+    
+        return $this;
+    }
+
+    /**
+     * Remove honours
+     *
+     * @param \Mf\ManagerBundle\Entity\Honour $honours
+     */
+    public function removeHonour(\Mf\ManagerBundle\Entity\Honour $honours)
+    {
+        $this->honours->removeElement($honours);
+    }
+
+    /**
+     * Get honours
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getHonours()
+    {
+        return $this->honours;
+    }
 }
