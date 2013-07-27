@@ -90,6 +90,19 @@ fos_user:
             handler:            fos_user.profile.form.handler.default
             name:               fos_user_profile_form
 
+fos_rest:
+    view:
+        view_response_listener: false
+        failed_validation: HTTP_BAD_REQUEST
+        default_engine: php
+        formats:
+            json: true
+    format_listener:
+        prefer_extension: true
+    body_listener:
+        decoders:
+            json: fos_rest.decoder.json
+
 mopa_bootstrap:
     form:
         show_legend: false # default is true
