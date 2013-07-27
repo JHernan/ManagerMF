@@ -2,7 +2,7 @@ services:
     sonata.admin.league:
         class: Mf\ManagerBundle\Admin\Entity\LeagueAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: league, label: "League" }
+            - { name: sonata.admin, manager_type: orm, group: Leagues, label: "League" }
         arguments:
             - ~
             - Mf\ManagerBundle\Entity\League
@@ -13,7 +13,7 @@ services:
     sonata.admin.tactic:
         class: Mf\ManagerBundle\Admin\Entity\TacticAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: tactic, label: "Tactic" }
+            - { name: sonata.admin, manager_type: orm, group: Tactics, label: "Tactic" }
         arguments:
             - ~
             - Mf\ManagerBundle\Entity\Tactic
@@ -24,7 +24,7 @@ services:
     sonata.admin.demarcation:
         class: Mf\ManagerBundle\Admin\Entity\DemarcationAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: demarcation, label: "Demarcation" }
+            - { name: sonata.admin, manager_type: orm, group: Tactics, label: "Demarcation" }
         arguments:
             - ~
             - Mf\ManagerBundle\Entity\Demarcation
@@ -35,7 +35,7 @@ services:
     sonata.admin.season:
         class: Mf\ManagerBundle\Admin\Entity\SeasonAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: season, label: "Season" }
+            - { name: sonata.admin, manager_type: orm, group: Leagues, label: "Season" }
         arguments:
             - ~
             - Mf\ManagerBundle\Entity\Season
@@ -46,7 +46,7 @@ services:
     sonata.admin.team:
         class: Mf\ManagerBundle\Admin\Entity\TeamAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: team, label: "Team" }
+            - { name: sonata.admin, manager_type: orm, group: Teams, label: "Team" }
         arguments:
             - ~
             - Mf\ManagerBundle\Entity\Team
@@ -57,7 +57,7 @@ services:
     sonata.admin.match_day:
         class: Mf\ManagerBundle\Admin\Entity\MatchDayAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: match_day, label: "Match Day" }
+            - { name: sonata.admin, manager_type: orm, group: Leagues, label: "Match Day" }
         arguments:
             - ~
             - Mf\ManagerBundle\Entity\MatchDay
@@ -68,7 +68,7 @@ services:
     sonata.admin.football_team:
         class: Mf\ManagerBundle\Admin\Entity\FootballTeamAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: football_team, label: "Football Team" }
+            - { name: sonata.admin, manager_type: orm, group: Players, label: "Football Team" }
         arguments:
             - ~
             - Mf\ManagerBundle\Entity\FootballTeam
@@ -79,7 +79,7 @@ services:
     sonata.admin.player:
         class: Mf\ManagerBundle\Admin\Entity\PlayerAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: player, label: "Player" }
+            - { name: sonata.admin, manager_type: orm, group: Players, label: "Player" }
         arguments:
             - ~
             - Mf\ManagerBundle\Entity\Player
@@ -90,7 +90,7 @@ services:
     sonata.admin.tactic_demarcation:
         class: Mf\ManagerBundle\Admin\Entity\TacticDemarcationAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: tactic_demarcation, label: "Tactic Demarcation" }
+            - { name: sonata.admin, manager_type: orm, group: Tactics, label: "Tactic Demarcation" }
         arguments:
             - ~
             - Mf\ManagerBundle\Entity\TacticDemarcation
@@ -101,7 +101,7 @@ services:
     sonata.admin.honour:
         class: Mf\ManagerBundle\Admin\Entity\HonourAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: honour, label: "Honour" }
+            - { name: sonata.admin, manager_type: orm, group: Teams, label: "Honour" }
         arguments:
             - ~
             - Mf\ManagerBundle\Entity\Honour
