@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Season
  *
  * @ORM\Table(name="mf_season")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Mf\ManagerBundle\Entity\SeasonRepository")
  */
 class Season
 {
