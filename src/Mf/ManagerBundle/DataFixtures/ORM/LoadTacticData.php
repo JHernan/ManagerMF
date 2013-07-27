@@ -29,6 +29,8 @@ class LoadTacticData extends AbstractFixture implements OrderedFixtureInterface
             $tactic->setName($item);
 
             $manager->persist($tactic);
+
+            $this->addReference($item, $tactic);
         endforeach;
         
         $manager->flush();

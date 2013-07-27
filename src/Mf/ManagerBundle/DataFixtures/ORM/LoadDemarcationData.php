@@ -31,6 +31,8 @@ class LoadDemarcationData extends AbstractFixture implements OrderedFixtureInter
             $demarcation->setName($item);
 
             $manager->persist($demarcation);
+
+            $this->addReference($item, $demarcation);
         endforeach;
         
         $manager->flush();
