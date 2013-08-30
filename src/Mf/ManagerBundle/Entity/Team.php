@@ -3,12 +3,15 @@
 namespace Mf\ManagerBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Expose;
 
 /**
  * Team
  *
  * @ORM\Table(name="mf_team")
  * @ORM\Entity(repositoryClass="Mf\ManagerBundle\Entity\TeamRepository")
+ * @ExclusionPolicy("all")
  */
 class Team
 {
@@ -25,6 +28,7 @@ class Team
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Expose
      */
     private $name;
 

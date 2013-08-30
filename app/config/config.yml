@@ -102,6 +102,8 @@ fos_rest:
     body_listener:
         decoders:
             json: fos_rest.decoder.json
+    routing_loader:
+        default_format: json
 
 mopa_bootstrap:
     form:

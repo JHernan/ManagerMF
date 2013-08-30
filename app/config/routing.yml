@@ -3,6 +3,11 @@ mf_manager:
     type:     annotation
     prefix:   /
 
+mf_api:
+    type: rest
+    resource: "@MfManagerBundle/Controller/ApiController.php"
+    prefix: /api
+
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 

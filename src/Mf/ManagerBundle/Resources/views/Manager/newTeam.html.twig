@@ -1,0 +1,14 @@
+{% extends '::frontend.html.twig' %}
+
+
+
+
+
+{% block javascripts %}
+{{ parent() }}
+
+{% javascripts filter='?yui_js' 
+   '@ManagerBundle/Resources/public/js/angular/angular.min.js'
+%}
+<script src="{{ asset_url }}"></script>        
+{% endjavascripts %}

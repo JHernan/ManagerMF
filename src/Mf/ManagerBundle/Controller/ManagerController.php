@@ -18,10 +18,10 @@ class ManagerController extends Controller
     }
 
     /**
-     * @Route("/make-team", name="make_team")
+     * @Route("/team/new", name="team_new")
      * @Template()
      */
-    public function makeTeamAction()
+    public function newTeamAction()
     {
     	$em = $this->getDoctrine()->getEntityManager();
 
