@@ -1,14 +1,39 @@
 {% extends '::frontend.html.twig' %}
 
+{% block content %}
 
+<div class="span9" ng-controller="TeamListCtrl">
 
+	<h1>Haz tu Equipo</h1>
 
+	<input name="name" value="Nombre" />
+
+	<table class="table">
+
+		<tr>
+			<th>
+				Equipo
+			</th>
+		</tr>
+		<tr ng-repeat="team in teams">
+			<td>
+				[[ team.name ]]
+			</td>
+		</tr>
+
+	</table>
+
+</div>
+
+{% endblock %}
 
 {% block javascripts %}
 {{ parent() }}
 
 {% javascripts filter='?yui_js' 
-   '@ManagerBundle/Resources/public/js/angular/angular.min.js'
+   '@MfManagerBundle/Resources/public/js/angular/lib/angular.min.js'
+   '@MfManagerBundle/Resources/public/js/angular/controller/controller.js'
 %}
 <script src="{{ asset_url }}"></script>        
 {% endjavascripts %}
+{% endblock %}

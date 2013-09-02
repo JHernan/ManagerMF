@@ -32,6 +32,7 @@ assetic:
     use_controller: false
     bundles:        
         - FOSUserBundle
+        - MfManagerBundle
     #java: /usr/bin/java
     filters:
         less:
