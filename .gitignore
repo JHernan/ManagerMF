@@ -2,6 +2,7 @@
 app/bootstrap*
 
 # Symfony directories
+cache/*
 vendor/*
 */logs/*
 */cache/*
@@ -15,5 +16,6 @@ app/config/parameters.yml
 web/js/*
 web/css/*
 
+.htaccess
 .idea/
 /src/Mf/ManagerBundle/Entity/*php~
