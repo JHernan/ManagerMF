@@ -16,11 +16,10 @@ class ApiController extends Controller
         $teams = $manager->getRepository('Mf\ManagerBundle\Entity\Team')->findAll();
 
 
-        $view = View::create()
-            ->setData(array('teams' => $teams));
+        $view = View::create()->setData($teams);
 
         return $this->getViewHandler()->handle($view);
-    } // "get_teams"     [GET] /userss
+    } // "get_teams"     [GET] /teams
 
     /**
      * @return \FOS\RestBundle\View\ViewHandler
