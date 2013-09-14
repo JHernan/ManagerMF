@@ -12,4 +12,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class PlayerRepository extends EntityRepository
 {
+    public function getPlayersActive(){
+        $query = $this->getEntityManager()->createQuery("SELECT p.id, p.name as player_name, p.active, f.name as team_name, d.name as demarcation_name
+                                                            FROM MfManagerBundle:Player p
+                                                            LEFT JOIN p.demarcations d
+                                                            LEFT JOIN p.football_team f
+                                                            WHERE p.active = 1
+                                                            GROUP BY p.name");
+        $players = $query->getResult();
+
+        return $players;
+    }
 }

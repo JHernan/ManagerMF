@@ -6,19 +6,31 @@
 
 	<h1>Haz tu Equipo</h1>
 
-	<input name="name" value="Nombre" />
+	<input name="search" value="Filtro" ng-model="search" />
 
 	<table class="table">
 
 		<tr>
-			<th>
-				Equipo
-			</th>
+            <th>
+                Jugador
+            </th>
+            <th>
+                Equipo
+            </th>
+            <th>
+                Demarcación
+            </th>
 		</tr>
-		<tr ng-repeat="team in teams">
-			<td>
-				[[ team.name ]]
-			</td>
+		<tr ng-repeat="player in players | orderBy:team_name | filter:search">
+            <td>
+                [[ player.player_name ]]
+            </td>
+            <td>
+                [[ player.team_name ]]
+            </td>
+            <td>
+                [[ player.demarcation_name ]]
+            </td>
 		</tr>
 
 	</table>
@@ -34,6 +46,14 @@
    '@MfManagerBundle/Resources/public/js/angular/lib/angular.min.js'
    '@MfManagerBundle/Resources/public/js/angular/controller/controller.js'
 %}
-<script src="{{ asset_url }}"></script>        
+<script src="{{ asset_url }}"></script>
+
+<script type="text/javascript">
+    manager.controller('TeamListCtrl', function($scope, $http) {
+        $http.get('http://manager.local/app_dev.php/api/leagues/1/seasson/player.json').success(function(data) {
+            $scope.players = data;
+        });
+    });
+</script>
 {% endjavascripts %}
 {% endblock %}
