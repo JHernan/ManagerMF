@@ -23,13 +23,13 @@
 		</tr>
 		<tr ng-repeat="player in players | orderBy:team_name | filter:search">
             <td>
-                [[ player.player_name ]]
+                [[ player.name ]]
             </td>
             <td>
-                [[ player.team_name ]]
+                [[ player.football_team.name ]]
             </td>
             <td>
-                [[ player.demarcation_name ]]
+                <span ng-repeat="demarcation in player.demarcations">[[ demarcation.name ]] </span>
             </td>
 		</tr>
 
@@ -50,7 +50,7 @@
 
 <script type="text/javascript">
     manager.controller('TeamListCtrl', function($scope, $http) {
-        $http.get('http://manager.local/app_dev.php/api/leagues/1/seasson/player.json').success(function(data) {
+        $http.get('http://manager.local/app_dev.php/api/players/1.json').success(function(data) {
             $scope.players = data;
         });
     });

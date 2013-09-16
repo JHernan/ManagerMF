@@ -12,15 +12,23 @@ use Doctrine\ORM\EntityRepository;
  */
 class PlayerRepository extends EntityRepository
 {
-    public function getPlayersActive(){
-        $query = $this->getEntityManager()->createQuery("SELECT p.id, p.name as player_name, p.active, f.name as team_name, d.name as demarcation_name
-                                                            FROM MfManagerBundle:Player p
-                                                            LEFT JOIN p.demarcations d
-                                                            LEFT JOIN p.football_team f
-                                                            WHERE p.active = 1
-                                                            GROUP BY p.name");
-        $players = $query->getResult();
+    public function getPlayersActive($league_seasson){
 
-        return $players;
+        $qb = $this->getEntityManager()->createQueryBuilder();
+
+        $qb
+            ->select('Player', 'FootballTeam', 'Demarcation')
+            ->from('MfManagerBundle:Player', 'Player')
+            ->leftJoin('Player.football_team', 'FootballTeam')
+            ->leftJoin('FootballTeam.leagues_seasons', 'LeagueSeason')
+            ->leftJoin('Player.demarcations', 'Demarcation')
+            ->where('Player.active = 1')
+            ->andWhere('LeagueSeason.id = :league_season')
+            ->setParameter('league_season', $league_seasson)
+        ;
+
+        $query = $qb->getQuery();
+
+        return $query->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
     }
 }
