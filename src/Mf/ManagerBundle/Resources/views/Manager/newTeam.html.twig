@@ -12,16 +12,22 @@
 
 		<tr>
             <th>
+
+            </th>
+            <th>
                 Jugador
             </th>
             <th>
                 Equipo
             </th>
             <th>
-                Demarcación
+                Demarcaciones
             </th>
 		</tr>
 		<tr ng-repeat="player in players | orderBy:team_name | filter:search">
+            <td>
+                <input type="checkbox" id="[[ player.id ]]" ng-click="tooglePlayer($event, player.id)" />
+            </td>
             <td>
                 [[ player.name ]]
             </td>
@@ -47,13 +53,19 @@
    '@MfManagerBundle/Resources/public/js/angular/controller/controller.js'
 %}
 <script src="{{ asset_url }}"></script>
-
+{% endjavascripts %}
 <script type="text/javascript">
     manager.controller('TeamListCtrl', function($scope, $http) {
         $http.get('http://manager.local/app_dev.php/api/players/1.json').success(function(data) {
             $scope.players = data;
         });
+
+        $scope.tooglePlayer = function($event, player_id){
+            console.log(player_id);
+            var checkbox = $event.target;
+            var action = (checkbox.checked ? 'add' : 'remove');
+            console.log(action);
+        };
     });
 </script>
-{% endjavascripts %}
 {% endblock %}

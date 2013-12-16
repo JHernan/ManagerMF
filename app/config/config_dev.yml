@@ -27,5 +27,15 @@ monolog:
 assetic:
     use_controller: true
 
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver:   pdo_mysql
+        host:     localhost
+        port:     null
+        dbname:   manager
+        user:     root
+        password: root
+
 #swiftmailer:
 #    delivery_address: me@example.com
