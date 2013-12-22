@@ -20,7 +20,8 @@ set  :use_sudo,      false
 set  :keep_releases,  3
 
 set :shared_files,      ["app/config/parameters.yml"]
-set :shared_children,   [app_path + "/logs", web_path + "/uploads", "vendor"]
+set :shared_children,   [app_path + "/cache", app_path + "/logs", web_path + "/uploads", "vendor"]
+set :writable_dirs,     ["app/cache", "app/logs"]
 
 set :use_composer, true
 
@@ -31,3 +32,15 @@ set :normalize_asset_timestamps, false
 
 # Be more verbose by uncommenting the following line
 logger.level = Logger::MAX_LEVEL
+
+
+before "deploy:create_symlink", :fix_parameters
+before "deploy:create_symlink", :fix_permissions
+
+
+task :fix_parameters do
+  run "cp #{deploy_to}/shared/app/config/parameters.yml #{latest_release}/app/config/parameters.yml"
+end
+task :fix_permissions do
+  run "chown www-data:www-data -R #{deploy_to}"
+end
