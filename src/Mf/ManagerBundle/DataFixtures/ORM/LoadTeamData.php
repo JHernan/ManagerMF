@@ -46,7 +46,7 @@ class LoadTeamData extends AbstractFixture implements OrderedFixtureInterface
 
             $this->addReference($item['name'], $team);
         endforeach;
-        
+
         $manager->flush();
     }
 
@@ -58,5 +58,3 @@ class LoadTeamData extends AbstractFixture implements OrderedFixtureInterface
         return 27; // the order in which fixtures will be loaded
     }
 }
-
-?>

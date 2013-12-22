@@ -49,7 +49,7 @@ class Lineup
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -65,14 +65,14 @@ class Lineup
     public function setMatchDay(\Mf\ManagerBundle\Entity\MatchDay $matchDay)
     {
         $this->match_day = $matchDay;
-    
+
         return $this;
     }
 
     /**
      * Get match_day
      *
-     * @return \Mf\ManagerBundle\Entity\MatchDay 
+     * @return \Mf\ManagerBundle\Entity\MatchDay
      */
     public function getMatchDay()
     {
@@ -88,14 +88,14 @@ class Lineup
     public function setTactic(\Mf\ManagerBundle\Entity\Tactic $tactic)
     {
         $this->tactic = $tactic;
-    
+
         return $this;
     }
 
     /**
      * Get tactic
      *
-     * @return \Mf\ManagerBundle\Entity\Tactic 
+     * @return \Mf\ManagerBundle\Entity\Tactic
      */
     public function getTactic()
     {
@@ -111,7 +111,7 @@ class Lineup
     public function addTeamPlayer(\Mf\ManagerBundle\Entity\TeamPlayer $teamPlayers)
     {
         $this->team_players[] = $teamPlayers;
-    
+
         return $this;
     }
 
@@ -128,7 +128,7 @@ class Lineup
     /**
      * Get team_players
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTeamPlayers()
     {
@@ -144,19 +144,19 @@ class Lineup
     public function setTeam(\Mf\ManagerBundle\Entity\Team $team)
     {
         $this->team = $team;
-    
+
         return $this;
     }
 
     /**
      * Get team
      *
-     * @return \Mf\ManagerBundle\Entity\Team 
+     * @return \Mf\ManagerBundle\Entity\Team
      */
     public function getTeam()
     {
         return $this->team;
-    }    
+    }
     /**
      * Constructor
      */
@@ -164,5 +164,5 @@ class Lineup
     {
         $this->team_players = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
 }

@@ -23,7 +23,7 @@ class LeagueAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('name')
-                ->add('seasons', 'entity', 
+                ->add('seasons', 'entity',
                     array(
                         'class' => 'Mf\ManagerBundle\Entity\LeagueSeason',
                         'required' => false,

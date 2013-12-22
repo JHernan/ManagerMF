@@ -389,7 +389,7 @@ class LoadTacticDemarcationData extends AbstractFixture implements OrderedFixtur
 
             $manager->persist($tactic_demarcation);
         endforeach;
-        
+
         $manager->flush();
     }
 
@@ -401,5 +401,3 @@ class LoadTacticDemarcationData extends AbstractFixture implements OrderedFixtur
         return 12; // the order in which fixtures will be loaded
     }
 }
-
-?>

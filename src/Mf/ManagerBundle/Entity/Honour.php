@@ -43,7 +43,7 @@ class Honour
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -64,14 +64,14 @@ class Honour
     public function setPosition($position)
     {
         $this->position = $position;
-    
+
         return $this;
     }
 
     /**
      * Get position
      *
-     * @return integer 
+     * @return integer
      */
     public function getPosition()
     {
@@ -87,14 +87,14 @@ class Honour
     public function setUser(\Mf\UserBundle\Entity\User $user)
     {
         $this->user = $user;
-    
+
         return $this;
     }
 
     /**
      * Get user
      *
-     * @return \Mf\UserBundle\Entity\User 
+     * @return \Mf\UserBundle\Entity\User
      */
     public function getUser()
     {
@@ -110,14 +110,14 @@ class Honour
     public function setLeaguesSeasons(\Mf\ManagerBundle\Entity\LeagueSeason $leaguesSeasons)
     {
         $this->leagues_seasons = $leaguesSeasons;
-    
+
         return $this;
     }
 
     /**
      * Get leagues_seasons
      *
-     * @return \Mf\ManagerBundle\Entity\LeagueSeason 
+     * @return \Mf\ManagerBundle\Entity\LeagueSeason
      */
     public function getLeaguesSeasons()
     {

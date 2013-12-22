@@ -43,7 +43,7 @@ class FootballTeam
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -59,14 +59,14 @@ class FootballTeam
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -77,7 +77,7 @@ class FootballTeam
     {
         return (string) $this->getName();
     }
-    
+
     /**
      * Add players
      *
@@ -87,7 +87,7 @@ class FootballTeam
     public function addPlayer(\Mf\ManagerBundle\Entity\Player $players)
     {
         $this->players[] = $players;
-    
+
         return $this;
     }
 
@@ -104,13 +104,13 @@ class FootballTeam
     /**
      * Get players
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getPlayers()
     {
         return $this->players;
     }
-    
+
     /**
      * Add leagues_seasons
      *
@@ -120,7 +120,7 @@ class FootballTeam
     public function addLeaguesSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leaguesSeasons)
     {
         $this->leagues_seasons[] = $leaguesSeasons;
-    
+
         return $this;
     }
 
@@ -137,7 +137,7 @@ class FootballTeam
     /**
      * Get leagues_seasons
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getLeaguesSeasons()
     {
@@ -151,5 +151,5 @@ class FootballTeam
         $this->leagues_seasons = new \Doctrine\Common\Collections\ArrayCollection();
         $this->players = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
 }

@@ -7,7 +7,7 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Mf\ManagerBundle\Entity\LeagueSeason;
 
-class LoadLeagueSeasonData extends AbstractFixture implements OrderedFixtureInterface
+class LoadLeagueSeasionData extends AbstractFixture implements OrderedFixtureInterface
 {
     /**
      * {@inheritDoc}
@@ -58,7 +58,7 @@ class LoadLeagueSeasonData extends AbstractFixture implements OrderedFixtureInte
 
             $this->addReference($item['league'] . ' - ' . $item['season'], $league_season);
         endforeach;
-        
+
         $manager->flush();
     }
 
@@ -70,5 +70,3 @@ class LoadLeagueSeasonData extends AbstractFixture implements OrderedFixtureInte
         return 25; // the order in which fixtures will be loaded
     }
 }
-
-?>

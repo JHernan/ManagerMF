@@ -9,7 +9,7 @@ form:
   label_enabled:              Activado
   label_credentials_expired:  Credenciales Expiradas
   label_name:                 Nombre
- 
+
 list:
   label_username:             Nombre de Usuario
   label_email:                Email
@@ -18,7 +18,7 @@ list:
   label_created_at:           Creado enn
   label_roles:                Roles
   label_name:                 Nombre
- 
+
 filter:
   label_username:             Nombre de Usuario
   label_locked:               Bloqueado

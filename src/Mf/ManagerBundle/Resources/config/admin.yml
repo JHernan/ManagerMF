@@ -6,7 +6,7 @@ services:
         arguments:
             - ~
             - Mf\ManagerBundle\Entity\League
-            - 'SonataAdminBundle:CRUD' 
+            - 'SonataAdminBundle:CRUD'
         calls:
             - [ setTranslationDomain, [MfManagerBundle] ]
 
@@ -17,7 +17,7 @@ services:
         arguments:
             - ~
             - Mf\ManagerBundle\Entity\Tactic
-            - 'SonataAdminBundle:CRUD' 
+            - 'SonataAdminBundle:CRUD'
         calls:
             - [ setTranslationDomain, [MfManagerBundle] ]
 
@@ -28,7 +28,7 @@ services:
         arguments:
             - ~
             - Mf\ManagerBundle\Entity\Demarcation
-            - 'SonataAdminBundle:CRUD' 
+            - 'SonataAdminBundle:CRUD'
         calls:
             - [ setTranslationDomain, [MfManagerBundle] ]
 
@@ -39,7 +39,7 @@ services:
         arguments:
             - ~
             - Mf\ManagerBundle\Entity\Season
-            - 'SonataAdminBundle:CRUD' 
+            - 'SonataAdminBundle:CRUD'
         calls:
             - [ setTranslationDomain, [MfManagerBundle] ]
 
@@ -50,7 +50,7 @@ services:
         arguments:
             - ~
             - Mf\ManagerBundle\Entity\Team
-            - 'SonataAdminBundle:CRUD' 
+            - 'SonataAdminBundle:CRUD'
         calls:
             - [ setTranslationDomain, [MfManagerBundle] ]
 

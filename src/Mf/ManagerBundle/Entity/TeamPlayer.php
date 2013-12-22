@@ -47,7 +47,7 @@ class TeamPlayer
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -68,14 +68,14 @@ class TeamPlayer
     public function setTeam(\Mf\ManagerBundle\Entity\Team $team)
     {
         $this->team = $team;
-    
+
         return $this;
     }
 
     /**
      * Get team
      *
-     * @return \Mf\ManagerBundle\Entity\Team 
+     * @return \Mf\ManagerBundle\Entity\Team
      */
     public function getTeam()
     {
@@ -91,20 +91,20 @@ class TeamPlayer
     public function setPlayer(\Mf\ManagerBundle\Entity\Player $player)
     {
         $this->player = $player;
-    
+
         return $this;
     }
 
     /**
      * Get player
      *
-     * @return \Mf\ManagerBundle\Entity\Player 
+     * @return \Mf\ManagerBundle\Entity\Player
      */
     public function getPlayer()
     {
         return $this->player;
     }
-    
+
     /**
      * Add lineups
      *
@@ -114,7 +114,7 @@ class TeamPlayer
     public function addLineup(\Mf\ManagerBundle\Entity\Lineup $lineups)
     {
         $this->lineups[] = $lineups;
-    
+
         return $this;
     }
 
@@ -131,7 +131,7 @@ class TeamPlayer
     /**
      * Get lineups
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getLineups()
     {
@@ -147,7 +147,7 @@ class TeamPlayer
     public function addPlayerPoint(\Mf\ManagerBundle\Entity\PlayerPoint $playerPoints)
     {
         $this->player_points[] = $playerPoints;
-    
+
         return $this;
     }
 
@@ -164,7 +164,7 @@ class TeamPlayer
     /**
      * Get player_points
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getPlayerPoints()
     {
@@ -178,5 +178,5 @@ class TeamPlayer
         $this->lineups = new \Doctrine\Common\Collections\ArrayCollection();
         $this->player_points = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
 }

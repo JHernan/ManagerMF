@@ -2,8 +2,8 @@
 
 {% block stylesheets %}
 {{ parent() }}
-{% stylesheets filter='less,cssrewrite,?yui_css' 
-   '@MfManagerBundle/Resources/public/css/manager.less'           
+{% stylesheets filter='less,cssrewrite,?yui_css'
+   '@MfManagerBundle/Resources/public/css/manager.less'
 %}
 <link href="{{ asset_url }}" type="text/css" rel="stylesheet"
    media="screen" />
@@ -145,10 +145,10 @@
 {% block javascripts %}
 {{ parent() }}
 
-{% javascripts filter='?yui_js' 
-   '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-dropdown.js'           
+{% javascripts filter='?yui_js'
+   '@MopaBootstrapBundle/Resources/bootstrap/js/bootstrap-dropdown.js'
 %}
-<script src="{{ asset_url }}"></script>        
+<script src="{{ asset_url }}"></script>
 {% endjavascripts %}
 
 {% endblock %}

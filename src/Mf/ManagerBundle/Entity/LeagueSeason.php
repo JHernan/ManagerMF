@@ -57,7 +57,7 @@ class LeagueSeason
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -78,14 +78,14 @@ class LeagueSeason
     public function setLeague(\Mf\ManagerBundle\Entity\League $league)
     {
         $this->league = $league;
-    
+
         return $this;
     }
 
     /**
      * Get league
      *
-     * @return \Mf\ManagerBundle\Entity\League 
+     * @return \Mf\ManagerBundle\Entity\League
      */
     public function getLeague()
     {
@@ -101,14 +101,14 @@ class LeagueSeason
     public function setSeason(\Mf\ManagerBundle\Entity\Season $season)
     {
         $this->season = $season;
-    
+
         return $this;
     }
 
     /**
      * Get season
      *
-     * @return \Mf\ManagerBundle\Entity\Season 
+     * @return \Mf\ManagerBundle\Entity\Season
      */
     public function getSeason()
     {
@@ -124,7 +124,7 @@ class LeagueSeason
     public function addTeam(\Mf\ManagerBundle\Entity\Team $teams)
     {
         $this->teams[] = $teams;
-    
+
         return $this;
     }
 
@@ -141,7 +141,7 @@ class LeagueSeason
     /**
      * Get teams
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTeams()
     {
@@ -157,7 +157,7 @@ class LeagueSeason
     public function addFootballTeam(\Mf\ManagerBundle\Entity\FootballTeam $footballTeams)
     {
         $this->football_teams[] = $footballTeams;
-    
+
         return $this;
     }
 
@@ -174,13 +174,13 @@ class LeagueSeason
     /**
      * Get football_teams
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getFootballTeams()
     {
         return $this->football_teams;
     }
-    
+
 
     /**
      * Add match_days
@@ -191,7 +191,7 @@ class LeagueSeason
     public function addMatchDay(\Mf\ManagerBundle\Entity\MatchDay $matchDays)
     {
         $this->match_days[] = $matchDays;
-    
+
         return $this;
     }
 
@@ -208,12 +208,12 @@ class LeagueSeason
     /**
      * Get match_days
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getMatchDays()
     {
         return $this->match_days;
-    }    
+    }
     /**
      * Constructor
      */
@@ -223,7 +223,7 @@ class LeagueSeason
         $this->football_teams = new \Doctrine\Common\Collections\ArrayCollection();
         $this->match_days = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
 
     /**
      * Add honours
@@ -234,7 +234,7 @@ class LeagueSeason
     public function addHonour(\Mf\ManagerBundle\Entity\Honour $honours)
     {
         $this->honours[] = $honours;
-    
+
         return $this;
     }
 
@@ -251,7 +251,7 @@ class LeagueSeason
     /**
      * Get honours
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getHonours()
     {

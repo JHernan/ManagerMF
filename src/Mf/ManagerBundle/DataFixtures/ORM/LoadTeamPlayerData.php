@@ -83,7 +83,7 @@ class LoadTeamPlayerData extends AbstractFixture implements OrderedFixtureInterf
 
             $manager->persist($team_player);
         endforeach;
-        
+
         $manager->flush();
     }
 
@@ -95,5 +95,3 @@ class LoadTeamPlayerData extends AbstractFixture implements OrderedFixtureInterf
         return 32; // the order in which fixtures will be loaded
     }
 }
-
-?>

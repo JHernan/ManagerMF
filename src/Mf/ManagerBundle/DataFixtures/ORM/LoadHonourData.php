@@ -39,7 +39,7 @@ class LoadHonourData extends AbstractFixture implements OrderedFixtureInterface
 
             $manager->persist($honour);
         endforeach;
-        
+
         $manager->flush();
     }
 
@@ -51,5 +51,3 @@ class LoadHonourData extends AbstractFixture implements OrderedFixtureInterface
         return 28; // the order in which fixtures will be loaded
     }
 }
-
-?>

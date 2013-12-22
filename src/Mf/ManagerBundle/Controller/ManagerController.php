@@ -23,7 +23,7 @@ class ManagerController extends Controller
      */
     public function newTeamAction()
     {
-    	//$em = $this->getDoctrine()->getEntityManager();
+        //$em = $this->getDoctrine()->getEntityManager();
 
         return array();
     }

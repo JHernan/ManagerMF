@@ -16,5 +16,3 @@ class MfUserRepository extends EntityRepository
             ->getResult();
     }
 }
-
-?>

@@ -79,7 +79,7 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface
 
             $this->addReference($item['name'], $user);
         endforeach;
-        
+
         $manager->flush();
     }
 
@@ -91,5 +91,3 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface
         return 14; // the order in which fixtures will be loaded
     }
 }
-
-?>

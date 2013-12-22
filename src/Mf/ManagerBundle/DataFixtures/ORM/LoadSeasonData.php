@@ -37,7 +37,7 @@ class LoadSeasonData extends AbstractFixture implements OrderedFixtureInterface
 
             $this->addReference($item['name'], $season);
         endforeach;
-        
+
         $manager->flush();
     }
 
@@ -49,5 +49,3 @@ class LoadSeasonData extends AbstractFixture implements OrderedFixtureInterface
         return 22; // the order in which fixtures will be loaded
     }
 }
-
-?>

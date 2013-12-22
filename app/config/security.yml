@@ -30,7 +30,7 @@ security:
                 failure_path:   null
                 default_target_path: sonata_admin_dashboard
             logout:
-                path:     /admin/logout                
+                path:     /admin/logout
                 target:   /admin/dashboard
             anonymous:    true
 
@@ -58,6 +58,6 @@ security:
 
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        
+
         - { path: ^/admin, role: ROLE_SUPER_ADMIN }
         - { path: ^/.*, role: ROLE_USER }

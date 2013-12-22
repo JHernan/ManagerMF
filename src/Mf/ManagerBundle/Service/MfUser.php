@@ -11,7 +11,8 @@ class MfUser
     protected $user_manager;
     protected $posts;
 
-    public function __construct(EntityManager $em, UserManager $user_manager, $posts){
+    public function __construct(EntityManager $em, UserManager $user_manager, $posts)
+    {
         $this->em = $em;
         $this->user_manager = $user_manager;
         $this->posts = $posts;
@@ -39,5 +40,3 @@ class MfUser
         $this->em->flush();
     }
 }
-
-?>

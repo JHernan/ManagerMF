@@ -345,12 +345,12 @@ class LoadPlayerData extends AbstractFixture implements OrderedFixtureInterface
                 foreach($item['demarcations'] as $demarcation):
                     $player->addDemarcation($this->getReference($demarcation));
                 endforeach;
-            }         
-            $manager->persist($player);               
+            }
+            $manager->persist($player);
 
             $this->addReference($item['name'], $player);
         endforeach;
-        
+
         $manager->flush();
     }
 
@@ -362,5 +362,3 @@ class LoadPlayerData extends AbstractFixture implements OrderedFixtureInterface
         return 31; // the order in which fixtures will be loaded
     }
 }
-
-?>

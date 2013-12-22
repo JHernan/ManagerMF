@@ -44,7 +44,7 @@ class Season
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -65,20 +65,20 @@ class Season
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
         return $this->name;
-    }   
-    
+    }
+
     /**
      * Set active
      *
@@ -88,20 +88,20 @@ class Season
     public function setActive($active)
     {
         $this->active = $active;
-    
+
         return $this;
     }
 
     /**
      * Get active
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getActive()
     {
         return $this->active;
     }
-    
+
     /**
      * Add leagues
      *
@@ -111,7 +111,7 @@ class Season
     public function addLeague(\Mf\ManagerBundle\Entity\LeagueSeason $leagues)
     {
         $this->leagues[] = $leagues;
-    
+
         return $this;
     }
 
@@ -128,13 +128,13 @@ class Season
     /**
      * Get leagues
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getLeagues()
     {
         return $this->leagues;
     }
-    
+
     /**
      * Constructor
      */

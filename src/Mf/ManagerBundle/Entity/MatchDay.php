@@ -67,7 +67,7 @@ class MatchDay
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -88,14 +88,14 @@ class MatchDay
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -111,14 +111,14 @@ class MatchDay
     public function setStartDate($startDate)
     {
         $this->start_date = $startDate;
-    
+
         return $this;
     }
 
     /**
      * Get start_date
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getStartDate()
     {
@@ -134,20 +134,20 @@ class MatchDay
     public function setEndDate($endDate)
     {
         $this->end_date = $endDate;
-    
+
         return $this;
     }
 
     /**
      * Get end_date
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getEndDate()
     {
         return $this->end_date;
     }
-    
+
     /**
      * Add lineups
      *
@@ -157,7 +157,7 @@ class MatchDay
     public function addLineup(\Mf\ManagerBundle\Entity\Lineup $lineups)
     {
         $this->lineups[] = $lineups;
-    
+
         return $this;
     }
 
@@ -174,7 +174,7 @@ class MatchDay
     /**
      * Get lineups
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getLineups()
     {
@@ -190,7 +190,7 @@ class MatchDay
     public function addPlayerPoint(\Mf\ManagerBundle\Entity\PlayerPoint $playerPoints)
     {
         $this->player_points[] = $playerPoints;
-    
+
         return $this;
     }
 
@@ -207,7 +207,7 @@ class MatchDay
     /**
      * Get player_points
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getPlayerPoints()
     {
@@ -223,7 +223,7 @@ class MatchDay
     public function addTeamPoint(\Mf\ManagerBundle\Entity\TeamPoint $teamPoints)
     {
         $this->team_points[] = $teamPoints;
-    
+
         return $this;
     }
 
@@ -240,13 +240,13 @@ class MatchDay
     /**
      * Get team_points
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTeamPoints()
     {
         return $this->team_points;
     }
-    
+
     /**
      * Set leagues_seasons
      *
@@ -256,14 +256,14 @@ class MatchDay
     public function setLeaguesSeasons(\Mf\ManagerBundle\Entity\LeagueSeason $leaguesSeasons)
     {
         $this->leagues_seasons = $leaguesSeasons;
-    
+
         return $this;
     }
 
     /**
      * Get leagues_seasons
      *
-     * @return \Mf\ManagerBundle\Entity\LeagueSeason 
+     * @return \Mf\ManagerBundle\Entity\LeagueSeason
      */
     public function getLeaguesSeasons()
     {
@@ -278,5 +278,5 @@ class MatchDay
         $this->player_points = new \Doctrine\Common\Collections\ArrayCollection();
         $this->team_points = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
 }

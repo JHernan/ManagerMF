@@ -55,7 +55,7 @@ class Player
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -76,19 +76,19 @@ class Player
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
         return $this->name;
-    }    
+    }
 
     /**
      * Set active
@@ -99,14 +99,14 @@ class Player
     public function setActive($active)
     {
         $this->active = $active;
-    
+
         return $this;
     }
 
     /**
      * Get active
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getActive()
     {
@@ -122,20 +122,20 @@ class Player
     public function setFootballTeam(\Mf\ManagerBundle\Entity\FootballTeam $footballTeam)
     {
         $this->football_team = $footballTeam;
-    
+
         return $this;
     }
 
     /**
      * Get football_team
      *
-     * @return \Mf\ManagerBundle\Entity\FootballTeam 
+     * @return \Mf\ManagerBundle\Entity\FootballTeam
      */
     public function getFootballTeam()
     {
         return $this->football_team;
     }
-        
+
     /**
      * Add demarcations
      *
@@ -146,7 +146,7 @@ class Player
     {
         $demarcations->addPlayer($this);
         $this->demarcations[] = $demarcations;
-    
+
         return $this;
     }
 
@@ -163,7 +163,7 @@ class Player
     /**
      * Get demarcations
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getDemarcations()
     {
@@ -179,7 +179,7 @@ class Player
     public function addTeamPlayer(\Mf\ManagerBundle\Entity\TeamPlayer $teamPlayers)
     {
         $this->team_players[] = $teamPlayers;
-    
+
         return $this;
     }
 
@@ -196,7 +196,7 @@ class Player
     /**
      * Get team_players
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTeamPlayers()
     {

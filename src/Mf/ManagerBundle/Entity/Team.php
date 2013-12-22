@@ -63,12 +63,12 @@ class Team
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
-    }    
+    }
 
     public function __toString()
     {
@@ -84,14 +84,14 @@ class Team
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -107,14 +107,14 @@ class Team
     public function setUser(\Mf\UserBundle\Entity\User $user)
     {
         $this->user = $user;
-    
+
         return $this;
     }
 
     /**
      * Get user
      *
-     * @return \Mf\UserBundle\Entity\User 
+     * @return \Mf\UserBundle\Entity\User
      */
     public function getUser()
     {
@@ -130,7 +130,7 @@ class Team
     public function addTeamPlayer(\Mf\ManagerBundle\Entity\TeamPlayer $teamPlayers)
     {
         $this->team_players[] = $teamPlayers;
-    
+
         return $this;
     }
 
@@ -147,7 +147,7 @@ class Team
     /**
      * Get team_players
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTeamPlayers()
     {
@@ -163,7 +163,7 @@ class Team
     public function addTeamPoint(\Mf\ManagerBundle\Entity\TeamPoint $teamPoints)
     {
         $this->team_points[] = $teamPoints;
-    
+
         return $this;
     }
 
@@ -180,7 +180,7 @@ class Team
     /**
      * Get team_points
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTeamPoints()
     {
@@ -196,7 +196,7 @@ class Team
     public function addLineup(\Mf\ManagerBundle\Entity\Lineup $lineups)
     {
         $this->lineups[] = $lineups;
-    
+
         return $this;
     }
 
@@ -213,13 +213,13 @@ class Team
     /**
      * Get lineups
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getLineups()
     {
         return $this->lineups;
     }
-    
+
     /**
      * Add leagues_seasons
      *
@@ -229,7 +229,7 @@ class Team
     public function addLeaguesSeason(\Mf\ManagerBundle\Entity\LeagueSeason $leaguesSeasons)
     {
         $this->leagues_seasons[] = $leaguesSeasons;
-    
+
         return $this;
     }
 
@@ -246,7 +246,7 @@ class Team
     /**
      * Get leagues_seasons
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getLeaguesSeasons()
     {
@@ -262,5 +262,5 @@ class Team
         $this->team_points = new \Doctrine\Common\Collections\ArrayCollection();
         $this->lineups = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
 }

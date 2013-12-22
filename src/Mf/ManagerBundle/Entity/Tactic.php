@@ -42,7 +42,7 @@ class Tactic
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -63,14 +63,14 @@ class Tactic
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -86,7 +86,7 @@ class Tactic
     public function addLineup(\Mf\ManagerBundle\Entity\Lineup $lineups)
     {
         $this->lineups[] = $lineups;
-    
+
         return $this;
     }
 
@@ -103,13 +103,13 @@ class Tactic
     /**
      * Get lineups
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getLineups()
     {
         return $this->lineups;
     }
-    
+
     /**
      * Add demarcations
      *
@@ -119,7 +119,7 @@ class Tactic
     public function addDemarcation(\Mf\ManagerBundle\Entity\TacticDemarcation $demarcations)
     {
         $this->demarcations[] = $demarcations;
-    
+
         return $this;
     }
 
@@ -136,7 +136,7 @@ class Tactic
     /**
      * Get demarcations
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getDemarcations()
     {
@@ -150,5 +150,5 @@ class Tactic
         $this->lineups = new \Doctrine\Common\Collections\ArrayCollection();
         $this->demarcations = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
 }

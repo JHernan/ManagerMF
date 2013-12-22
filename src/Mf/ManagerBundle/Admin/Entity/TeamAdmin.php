@@ -37,7 +37,7 @@ class TeamAdmin extends Admin
 
     protected function configureDatagridFilters(DatagridMapper $filter)
     {
-        $filter            
+        $filter
             ->add('name')
             ->add('user')
             ->add('leagues_seasons')

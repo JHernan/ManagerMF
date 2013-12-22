@@ -43,7 +43,7 @@ class Demarcation
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -64,14 +64,14 @@ class Demarcation
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -87,7 +87,7 @@ class Demarcation
     public function addPlayer(\Mf\ManagerBundle\Entity\Player $players)
     {
         $this->players[] = $players;
-    
+
         return $this;
     }
 
@@ -104,13 +104,13 @@ class Demarcation
     /**
      * Get players
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getPlayers()
     {
         return $this->players;
     }
-    
+
     /**
      * Add tactics
      *
@@ -120,7 +120,7 @@ class Demarcation
     public function addTactic(\Mf\ManagerBundle\Entity\TacticDemarcation $tactics)
     {
         $this->tactics[] = $tactics;
-    
+
         return $this;
     }
 
@@ -137,7 +137,7 @@ class Demarcation
     /**
      * Get tactics
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTactics()
     {
@@ -151,5 +151,5 @@ class Demarcation
         $this->players = new \Doctrine\Common\Collections\ArrayCollection();
         $this->tactics = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
 }

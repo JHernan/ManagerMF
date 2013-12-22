@@ -47,15 +47,15 @@ class LoadMatchDayData extends AbstractFixture implements OrderedFixtureInterfac
                             ),
                         );
         foreach($match_days as $item):
-            $match_day = new MatchDay();        
-            $match_day->setName($item['name']);            
+            $match_day = new MatchDay();
+            $match_day->setName($item['name']);
             $match_day->setStartDate(new \DateTime($item['start_date']));
             $match_day->setEndDate(new \DateTime($item['end_date']));
             $match_day->setLeaguesSeasons($this->getReference($item['league_season']));
 
             $manager->persist($match_day);
         endforeach;
-        
+
         $manager->flush();
     }
 
@@ -67,5 +67,3 @@ class LoadMatchDayData extends AbstractFixture implements OrderedFixtureInterfac
         return 30; // the order in which fixtures will be loaded
     }
 }
-
-?>

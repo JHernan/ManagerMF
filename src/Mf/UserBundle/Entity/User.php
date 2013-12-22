@@ -44,7 +44,8 @@ class User extends BaseUser
         return $this->id;
     }
 
-    public function setSalt($salt){
+    public function setSalt($salt)
+    {
         $this->salt = $salt;
     }
 
@@ -57,7 +58,7 @@ class User extends BaseUser
     public function addTeam(\Mf\ManagerBundle\Entity\Team $teams)
     {
         $this->teams[] = $teams;
-    
+
         return $this;
     }
 
@@ -74,7 +75,7 @@ class User extends BaseUser
     /**
      * Get teams
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTeams()
     {
@@ -90,7 +91,7 @@ class User extends BaseUser
     public function addHonour(\Mf\ManagerBundle\Entity\Honour $honours)
     {
         $this->honours[] = $honours;
-    
+
         return $this;
     }
 
@@ -107,7 +108,7 @@ class User extends BaseUser
     /**
      * Get honours
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getHonours()
     {

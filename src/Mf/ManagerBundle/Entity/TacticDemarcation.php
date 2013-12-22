@@ -37,7 +37,7 @@ class TacticDemarcation
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -58,14 +58,14 @@ class TacticDemarcation
     public function setTactic(\Mf\ManagerBundle\Entity\Tactic $tactic)
     {
         $this->tactic = $tactic;
-    
+
         return $this;
     }
 
     /**
      * Get tactic
      *
-     * @return \Mf\ManagerBundle\Entity\Tactic 
+     * @return \Mf\ManagerBundle\Entity\Tactic
      */
     public function getTactic()
     {
@@ -81,14 +81,14 @@ class TacticDemarcation
     public function setDemarcation(\Mf\ManagerBundle\Entity\Demarcation $demarcation)
     {
         $this->demarcation = $demarcation;
-    
+
         return $this;
     }
 
     /**
      * Get demarcation
      *
-     * @return \Mf\ManagerBundle\Entity\Demarcation 
+     * @return \Mf\ManagerBundle\Entity\Demarcation
      */
     public function getDemarcation()
     {

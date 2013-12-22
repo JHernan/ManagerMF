@@ -18,7 +18,7 @@ class LoadFootballTeamData extends AbstractFixture implements OrderedFixtureInte
                         'Almería',
                         'Atlético de Madrid',
                         'Athletic Bilbao',
-                        'Barcelona',  
+                        'Barcelona',
                         'Betis',
                         'Celta',
                         'Elche',
@@ -29,9 +29,9 @@ class LoadFootballTeamData extends AbstractFixture implements OrderedFixtureInte
                         'Málaga',
                         'Osasuna',
                         'Rayo Vallecano',
-                        'Real Madrid',   
+                        'Real Madrid',
                         'Real Sociedad',
-                        'Sevilla',               
+                        'Sevilla',
                         'Valencia',
                         'Valladolid',
                         'Villarreal'
@@ -45,7 +45,7 @@ class LoadFootballTeamData extends AbstractFixture implements OrderedFixtureInte
 
             $this->addReference($item, $football_team);
         endforeach;
-        
+
         $manager->flush();
     }
 
@@ -57,5 +57,3 @@ class LoadFootballTeamData extends AbstractFixture implements OrderedFixtureInte
         return 26; // the order in which fixtures will be loaded
     }
 }
-
-?>

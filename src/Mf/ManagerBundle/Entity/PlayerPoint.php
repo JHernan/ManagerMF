@@ -44,7 +44,7 @@ class PlayerPoint
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -60,14 +60,14 @@ class PlayerPoint
     public function setPoints($points)
     {
         $this->points = $points;
-    
+
         return $this;
     }
 
     /**
      * Get points
      *
-     * @return integer 
+     * @return integer
      */
     public function getPoints()
     {
@@ -83,14 +83,14 @@ class PlayerPoint
     public function setTeamPlayer(\Mf\ManagerBundle\Entity\TeamPlayer $teamPlayer)
     {
         $this->team_player = $teamPlayer;
-    
+
         return $this;
     }
 
     /**
      * Get team_player
      *
-     * @return \Mf\ManagerBundle\Entity\TeamPlayer 
+     * @return \Mf\ManagerBundle\Entity\TeamPlayer
      */
     public function getTeamPlayer()
     {
@@ -106,14 +106,14 @@ class PlayerPoint
     public function setMatchDay(\Mf\ManagerBundle\Entity\MatchDay $matchDay)
     {
         $this->match_day = $matchDay;
-    
+
         return $this;
     }
 
     /**
      * Get match_day
      *
-     * @return \Mf\ManagerBundle\Entity\MatchDay 
+     * @return \Mf\ManagerBundle\Entity\MatchDay
      */
     public function getMatchDay()
     {

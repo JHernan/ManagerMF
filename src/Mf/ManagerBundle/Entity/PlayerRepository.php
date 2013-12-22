@@ -12,8 +12,8 @@ use Doctrine\ORM\EntityRepository;
  */
 class PlayerRepository extends EntityRepository
 {
-    public function getPlayersActive($league_seasson){
-
+    public function getPlayersActive($league_seasson)
+    {
         $qb = $this->getEntityManager()->createQueryBuilder();
 
         $qb

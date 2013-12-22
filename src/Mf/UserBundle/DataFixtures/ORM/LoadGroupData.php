@@ -16,12 +16,12 @@ class LoadGroupData extends AbstractFixture implements OrderedFixtureInterface
     {
         $groupUser = new Group('User');
         $groupUser->addRole('ROLE_USER');
-        $this->addReference('group-user', $groupUser);       
+        $this->addReference('group-user', $groupUser);
         $manager->persist($groupUser);
 
         $groupAdmin = new Group('Admin');
         $groupAdmin->addRole('ROLE_SUPER_ADMIN');
-        $this->addReference('group-admin', $groupAdmin);       
+        $this->addReference('group-admin', $groupAdmin);
         $manager->persist($groupAdmin);
 
         $manager->flush();
@@ -35,5 +35,3 @@ class LoadGroupData extends AbstractFixture implements OrderedFixtureInterface
         return 13; // the order in which fixtures will be loaded
     }
 }
-
-?>

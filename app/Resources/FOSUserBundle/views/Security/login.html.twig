@@ -2,8 +2,8 @@
 
 {% block stylesheets %}
 {{ parent() }}
-{% stylesheets filter='less,cssrewrite,?yui_css' 
-    '@MfUserBundle/Resources/public/css/login.less'           
+{% stylesheets filter='less,cssrewrite,?yui_css'
+    '@MfUserBundle/Resources/public/css/login.less'
 %}
 <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
 {% endstylesheets %}
@@ -14,7 +14,7 @@
 {% block fos_user_content %}
 
 <form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
-	<h2 class="form-signin-heading">{{ 'layout.login'|trans }}</h2>    
+	<h2 class="form-signin-heading">{{ 'layout.login'|trans }}</h2>
 	{% if error %}
 	    <div class="alert alert-error">{{ error|trans }}</div>
 	{% endif %}

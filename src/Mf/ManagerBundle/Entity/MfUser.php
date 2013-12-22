@@ -56,7 +56,7 @@ class MfUser
     /**
      * Get userid
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserid()
     {
@@ -72,14 +72,14 @@ class MfUser
     public function setUsername($username)
     {
         $this->username = $username;
-    
+
         return $this;
     }
 
     /**
      * Get username
      *
-     * @return string 
+     * @return string
      */
     public function getUsername()
     {
@@ -95,14 +95,14 @@ class MfUser
     public function setPassword($password)
     {
         $this->password = $password;
-    
+
         return $this;
     }
 
     /**
      * Get password
      *
-     * @return string 
+     * @return string
      */
     public function getPassword()
     {
@@ -118,14 +118,14 @@ class MfUser
     public function setSalt($salt)
     {
         $this->salt = $salt;
-    
+
         return $this;
     }
 
     /**
      * Get salt
      *
-     * @return string 
+     * @return string
      */
     public function getSalt()
     {
@@ -141,14 +141,14 @@ class MfUser
     public function setEmail($email)
     {
         $this->email = $email;
-    
+
         return $this;
     }
 
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -164,14 +164,14 @@ class MfUser
     public function setPosts($posts)
     {
         $this->posts = $posts;
-    
+
         return $this;
     }
 
     /**
      * Get posts
      *
-     * @return integer 
+     * @return integer
      */
     public function getPosts()
     {

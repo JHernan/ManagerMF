@@ -18,7 +18,7 @@ class LoadDemarcationData extends AbstractFixture implements OrderedFixtureInter
                         'Portero',
                         'Lateral Derecho',
                         'Lateral Izquierdo',
-                        'Central',  
+                        'Central',
                         'Pivote',
                         'Medio Centro',
                         'Interior',
@@ -34,7 +34,7 @@ class LoadDemarcationData extends AbstractFixture implements OrderedFixtureInter
 
             $this->addReference($item, $demarcation);
         endforeach;
-        
+
         $manager->flush();
     }
 
@@ -46,5 +46,3 @@ class LoadDemarcationData extends AbstractFixture implements OrderedFixtureInter
         return 10; // the order in which fixtures will be loaded
     }
 }
-
-?>

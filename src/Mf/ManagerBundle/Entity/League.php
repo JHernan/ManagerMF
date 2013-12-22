@@ -37,7 +37,7 @@ class League
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -58,20 +58,20 @@ class League
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
         return $this->name;
-    }  
-    
+    }
+
     /**
      * Add seasons
      *
@@ -81,7 +81,7 @@ class League
     public function addSeason(\Mf\ManagerBundle\Entity\LeagueSeason $seasons)
     {
         $this->seasons[] = $seasons;
-    
+
         return $this;
     }
 
@@ -98,7 +98,7 @@ class League
     /**
      * Get seasons
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getSeasons()
     {
@@ -111,5 +111,5 @@ class League
     {
         $this->seasons = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
 }
