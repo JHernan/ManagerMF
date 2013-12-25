@@ -35,7 +35,7 @@
                 [[ player.football_team.name ]]
             </td>
             <td>
-                <span ng-repeat="demarcation in player.demarcations">[[ demarcation.name ]] </span>
+                <span ng-repeat="demarcation in player.demarcations">[[ demarcation.name ]]<span ng-show="!$last">, </span> </span>
             </td>
 		</tr>
 

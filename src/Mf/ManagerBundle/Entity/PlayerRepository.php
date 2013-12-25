@@ -3,6 +3,7 @@
 namespace Mf\ManagerBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Query;
 
 /**
  * PlayerRepository
@@ -17,7 +18,11 @@ class PlayerRepository extends EntityRepository
         $qb = $this->getEntityManager()->createQueryBuilder();
 
         $qb
-            ->select('Player', 'FootballTeam', 'Demarcation')
+            ->select('
+                partial Player.{id, name},
+                partial FootballTeam.{id, name},
+                partial Demarcation.{id, name}
+            ')
             ->from('MfManagerBundle:Player', 'Player')
             ->leftJoin('Player.football_team', 'FootballTeam')
             ->leftJoin('FootballTeam.leagues_seasons', 'LeagueSeason')
@@ -29,6 +34,6 @@ class PlayerRepository extends EntityRepository
 
         $query = $qb->getQuery();
 
-        return $query->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY);
+        return $query->getResult(Query::HYDRATE_ARRAY);
     }
 }
