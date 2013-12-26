@@ -15,6 +15,8 @@ app/config/parameters.yml
 
 web/js/*
 web/css/*
+web/assetic/*
+web/img/*
 
 .htaccess
 .idea/

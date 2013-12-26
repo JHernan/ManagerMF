@@ -34,6 +34,11 @@ assetic:
         - FOSUserBundle
         - MfManagerBundle
     #java: /usr/bin/java
+    assets:
+        js_bootstrap:
+            inputs:
+                -  "%kernel.root_dir%/../vendor/twbs/bootstrap/js/bootstrap-dropdown.js"
+            output: "js/bootstrap.js"
     filters:
         less:
             node: /usr/local/bin/node

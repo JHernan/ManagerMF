@@ -6,14 +6,14 @@
 
 	<h1>Haz tu Equipo</h1>
 
-    <input type="text" ng-model="query" ng-change="search()" class="input-large search-query" placeholder="Search"><i class="icon-search"></i>
+    <input type="text" ng-model="query" ng-change="search()" class="input-large search-query" placeholder="Search">
 
 	<table class="table">
         <thead>
             <tr>
                 <th></th>
-                <th class="name">Jugador<a ng-click="sort_by('name')"><i class="icon-search"></i></a></th>
-                <th class="team">Equipo<a ng-click="sort_by('team')"><i class="icon-sort"></i></a></th>
+                <th class="name"><a ng-click="sort_by('name', 'name')">Jugador <i></i></a></th>
+                <th class="team"><a ng-click="sort_by('football_team.name', 'team')">Equipo <i></i></a></th>
                 <th class="description">Demarcaciones</th>
             </tr>
         </thead>
@@ -147,7 +147,7 @@
             $scope.search();
 
             // change sorting order
-            $scope.sort_by = function(newSortingOrder) {
+            $scope.sort_by = function(newSortingOrder, identify) {
                 if ($scope.sortingOrder == newSortingOrder)
                     $scope.reverse = !$scope.reverse;
 
@@ -159,9 +159,9 @@
                     $(this).removeClass().addClass('icon-sort');
                 });
                 if ($scope.reverse)
-                    $('th.'+new_sorting_order+' i').removeClass().addClass('icon-chevron-up');
+                    $('th.'+identify+' i').removeClass().addClass('icon-chevron-up');
                 else
-                    $('th.'+new_sorting_order+' i').removeClass().addClass('icon-chevron-down');
+                    $('th.'+identify+' i').removeClass().addClass('icon-chevron-down');
             };
         });
 
